@@ -1,19 +1,29 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/logo.svg";
 
 const NavbarContainer = styled.div`
-display:flex;
-flex-direction:row;
-justify-content:space-between;
-min-width: 400px;
-background:black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 500px;
+  background: black;
   .logo {
     color: white;
-    text-align
+    font-family: "Libre Baskerville";
+    font-size: 1.5rem;
+  }
+  img {
+    width: 50px;
+    height: 50px;
+    background: white;
+    margin: 1em;
+    border-radius: 3em;
   }
   .nav-bar {
     position: relative;
-    padding: 2em;
+    padding-top: 3em;
     display: flex;
     flex-direction: row-reverse;
     background: black;
@@ -30,12 +40,12 @@ background:black;
     position: relative;
     width: 33.333%;
     display: table-cell;
-    
+
     color: #949494;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    padding: 10px 6px;
+    padding: 6px 6px;
     transition: 0.2s ease color;
   }
 
@@ -124,12 +134,22 @@ background:black;
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <div className="logo">logo</div>
+      <NavLink to="/">
+        {" "}
+        <div className="logo">
+          <img src={`${logo}`} />
+          Shareable
+        </div>
+      </NavLink>
       <div className="nav-bar">
         <nav>
           <a href="#">List items</a>
-          <a href="#">Log in</a>
-          <a href="#">Sign in</a>
+          <NavLink to="/login">
+            <a href="#">Log in</a>
+          </NavLink>
+          <NavLink to="/signup">
+            <a href="#">Sign in</a>
+          </NavLink>
           <div id="indicator"></div>
         </nav>
       </div>
