@@ -21,7 +21,7 @@ const Navbar = () => {
           <NavLink to="/signup">
             <span>Sign up</span>
           </NavLink>
-          <NavLink to="/">
+          <NavLink to="/profile">
             {" "}
             <span>Profile</span>
           </NavLink>
