@@ -8,19 +8,23 @@ const Navbar = () => {
     <NavbarContainer>
       <NavLink to='/'>
         {" "}
-        <div className='logo'>
-          <img src={`${logo}`} alt='' />
+
+        <div className="logo">
+          <img src={`${logo}`} alt="logo" />
           Shareable
         </div>
       </NavLink>
       <div className='nav-bar'>
         <nav>
-          <a href='#'>List items</a>
-          <NavLink to='/login'>
-            <a href='#'>Log in</a>
+
+          <NavLink to="/login">
+            <span>Log in</span>
           </NavLink>
-          <NavLink to='/signup'>
-            <a href='#'>Sign in</a>
+          <NavLink to="/signup">
+            <span>Sign up</span>
+          </NavLink>
+          <NavLink to="/profile">
+            <span>Profile</span>
           </NavLink>
           <div id='indicator'></div>
         </nav>

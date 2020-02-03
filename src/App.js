@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp";
 import Lost from "./components/Lost";
 import MainPage from "./components/MainPage";
 import EquipmentUploadForm from "./components/EquipmentUploadForm";
+import Profile from "./components/Profile";
 
 export default function App() {
   return (
@@ -26,6 +27,10 @@ export default function App() {
           <SignUp />
         </Route>
         <Route path=''>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+        <Route path="">
           <Lost />
         </Route>
       </Switch>
