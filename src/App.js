@@ -2,8 +2,8 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Login from "./components/Login";
-import SignUp from "./components/SignUp";
+import LoginModal from "./components/LoginModal";
+import SignUpModal from "./components/SignUpModal";
 import Lost from "./components/Lost";
 import MainPage from "./components/MainPage";
 import Profile from "./components/Profile";
@@ -17,10 +17,10 @@ export default function App() {
           <MainPage />
         </Route>
         <Route path="/login">
-          <Login />
+          <LoginModal />
         </Route>
         <Route path="/signup">
-          <SignUp />
+          <SignUpModal />
         </Route>
         <Route path="/profile">
           <Profile />
