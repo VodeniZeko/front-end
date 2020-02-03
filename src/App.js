@@ -14,10 +14,10 @@ export default function App() {
     <main>
       <Navbar />
       <Switch>
-        <Route path='/EquipmentUpload'>
+        {/* <Route path="/EquipmentUpload">
           <EquipmentUploadForm />
-        </Route>
-        <Route exact path='/'>
+        </Route> */}
+        <Route exact path="/">
           <MainPage />
         </Route>
         <Route path="/login">
@@ -25,9 +25,8 @@ export default function App() {
         </Route>
         <Route path="/signup">
           <SignUpModal />
-
         </Route>
-        <Route path=''>
+        {/* <Route path=''> */}
         <Route path="/profile">
           <Profile />
         </Route>

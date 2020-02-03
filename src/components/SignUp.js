@@ -9,8 +9,8 @@ const SignUp = () => (
       name: "",
       email: "",
       password: "",
-      renter: "",
-      owner: ""
+      owner: "",
+      renter: ""
     }}
     onSubmit={(values, { setSubmitting }) => {
       console.log(values);
@@ -85,21 +85,13 @@ const SignUp = () => (
           {errors.password && touched.password && (
             <div className="input-feedback">{errors.password}</div>
           )}
-          <div className="optionsContainer">
-            <Field as="select">
-              <option disabled>I am:</option>
-              <option value={values.renter}>Renter</option>
-              <option value={values.owner}>Owner</option>
-            </Field>
-          </div>
-          {errors.email && touched.email && (
-            <div className="input-feedback">{errors.email}</div>
-          )}
-          <button
-            className="signupButton"
-            type="submit"
-            disabled={isSubmitting}
-          >
+          <label className="checkbox-container">I am:</label>
+          Owner
+          <Field type="checkbox" name="owner" checked={values.owner} />
+          <label className="checkbox-container">I am:</label>
+          Renter
+          <Field type="checkbox" name="renter" checked={values.renter} />
+          <button className="signupButton" type="submit">
             Sign up
           </button>
         </form>

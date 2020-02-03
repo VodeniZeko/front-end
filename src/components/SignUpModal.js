@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import SignUp from "./SignUp";
 
@@ -20,7 +21,9 @@ const LoginModal = () => {
           <SignUp />
           <Modal.Footer>
             <span>Already have an account?</span>
-            <Button variant="outline-secondary">Login!</Button>
+            <NavLink to="/login">
+              <Button variant="outline-secondary">Login!</Button>
+            </NavLink>
           </Modal.Footer>
         </Modal.Body>
       </Modal>
