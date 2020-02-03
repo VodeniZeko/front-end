@@ -3,24 +3,23 @@ import useUpload from "../hooks/useUpload";
 import {
   Modal,
   Button,
-  ModalBody,
   ModalHeader,
   Form,
   Label,
   Input,
   FormGroup,
-  Card,
-  CardTitle,
   Textarea
 } from "@bootstrap-styled/v4";
 import { useDispatch, useSelector } from "react-redux";
-import { FORM_CHANGE, RESET_FORM } from "../reducers";
+import { FORM_CHANGE, RESET_FORM, RATE_CHANGE } from "../reducers";
 import { Send } from "../actions/Apicalls";
 import Loader from "react-loader-spinner";
 import ButtonGroup from "@bootstrap-styled/v4/lib/ButtonGroup";
+import CurrencyInput from "react-currency-input";
 
 const UploadInput = props => (
   <input
+    mycustomattribute='custominput'
     type='file'
     accept='image/*'
     name='img-loader-input'
@@ -51,10 +50,9 @@ const EquipmentUploadForm = props => {
   const handlesubmit = e => {
     e.preventDefault();
     dispatch(Send(item, props.match.params.id));
-    dispatch({ type: "RESET_FORM" });
+    dispatch({ type: RESET_FORM });
     setTimeout(() => {
       props.history.push("/");
-      dispatch({ type: "LOADING_FALSE" });
     }, 200);
   };
 
@@ -62,18 +60,18 @@ const EquipmentUploadForm = props => {
     e.preventDefault();
     dispatch({ type: FORM_CHANGE, name: e.target.name, value: e.target.value });
   };
-  const priceChange = e => {
+  const priceChange = (e, hourlyRate, maskedvalue) => {
     dispatch({
-      type: "RATE_CHANGE",
-      name: e.target.name,
-      value: e.target.value
+      type: RATE_CHANGE,
+      name: hourlyRate,
+      value: maskedvalue
     });
   };
 
   return (
     <div className='container'>
       {/* ------- FILES UPLOADED MSG ------ */}
-      <h1>Product Upload</h1>
+      <h1>Equipment Upload</h1>
 
       <form className='form' onSubmit={onSubmit}>
         {status === "FILES_UPLOADED" && (
@@ -130,28 +128,29 @@ const EquipmentUploadForm = props => {
         <Form onSubmit={handlesubmit}>
           <FormGroup>
             <Label>
-              <p> Name of Product </p>
+              <p> Name of Equipment </p>
               <Input
                 required
+                minLength='3'
                 type='text'
                 name='name'
                 value={item.name}
-                placeholder=' Product Name'
+                placeholder=' Equipment Name'
                 onChange={handlechange}
               />
             </Label>
             <Label>
-              <p> Description of Product </p>
+              <p> Description of Equipment </p>
               <Textarea
                 type='text'
                 name='description'
                 value={item.description}
-                placeholder=' The quality of a product description can make or break a sale  '
+                placeholder=' The quality of a Equipment description can make or break a sale  '
                 onChange={handlechange}
               />
             </Label>
             <Label>
-              <p> Product Condition </p>
+              <p> Equipment Condition </p>
               <Input
                 className='condition'
                 type='text'
@@ -162,7 +161,7 @@ const EquipmentUploadForm = props => {
               />
             </Label>
             <Label>
-              <p> Product Location </p>
+              <p> Equipment Location </p>
               <Input
                 type='text'
                 name='location'
@@ -173,16 +172,16 @@ const EquipmentUploadForm = props => {
             </Label>
             <Label>
               <p style={{ textAlign: "center" }}>
-                Product Rental Price: <br /> (Can Choose Price per Hour and/or
+                Equipment Rental Price: <br /> (Can Choose Price per Hour and/or
                 Per Day)
               </p>
               {!radiobutton ? (
-                <Input
-                  type='number'
-                  name='hourlyRate'
+                <CurrencyInput
+                  // type='currency'
+                  // name='hourlyRate'
                   value={price.hourlyRate}
-                  placeholder='Price per Hr'
-                  onChange={priceChange}
+                  // placeholder='Price per Hour'
+                  onChangeEvent={priceChange}
                 />
               ) : (
                 <Input

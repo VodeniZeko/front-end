@@ -3,6 +3,7 @@ export const DATA_SUCCESS = "DATA_SUCCESS";
 export const DATA_FAILURE = "DATA_FAILURE";
 export const FORM_CHANGE = "FORM_CHANGE";
 export const RESET_FORM = "RESET_FORM";
+export const RATE_CHANGE = "RATE_CHANGE";
 const uuidv4 = require("uuid/v4");
 
 const initialState = {
@@ -51,7 +52,7 @@ export default (state = initialState, action) => {
           [action.name]: action.value
         }
       };
-    case "RATE_CHANGE":
+    case RATE_CHANGE:
       return {
         ...state,
         item: {
