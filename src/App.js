@@ -14,23 +14,23 @@ export default function App() {
     <main>
       <Navbar />
       <Switch>
-        {/* <Route path="/EquipmentUpload">
+        <Route path='/EquipmentUpload'>
           <EquipmentUploadForm />
-        </Route> */}
-        <Route exact path="/">
+        </Route>
+        <Route exact path='/'>
           <MainPage />
         </Route>
-        <Route path="/login">
+        <Route path='/login'>
           <LoginModal />
         </Route>
-        <Route path="/signup">
+        <Route path='/signup'>
           <SignUpModal />
         </Route>
         {/* <Route path=''> */}
-        <Route path="/profile">
+        <Route path='/profile'>
           <Profile />
         </Route>
-        <Route path="">
+        <Route path=''>
           <Lost />
         </Route>
       </Switch>
