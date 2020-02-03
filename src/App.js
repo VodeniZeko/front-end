@@ -6,6 +6,7 @@ import LoginModal from "./components/LoginModal";
 import SignUpModal from "./components/SignUpModal";
 import Lost from "./components/Lost";
 import MainPage from "./components/MainPage";
+import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
 
 export default function App() {
@@ -13,7 +14,10 @@ export default function App() {
     <main>
       <Navbar />
       <Switch>
-        <Route exact path="/">
+        <Route path='/EquipmentUpload'>
+          <EquipmentUploadForm />
+        </Route>
+        <Route exact path='/'>
           <MainPage />
         </Route>
         <Route path="/login">
@@ -21,7 +25,9 @@ export default function App() {
         </Route>
         <Route path="/signup">
           <SignUpModal />
+
         </Route>
+        <Route path=''>
         <Route path="/profile">
           <Profile />
         </Route>
