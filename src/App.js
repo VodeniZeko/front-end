@@ -14,9 +14,9 @@ export default function App() {
     <main>
       <Navbar />
       <Switch>
-        <Route path='/EquipmentUpload'>
+        {/* <Route path="/EquipmentUpload">
           <EquipmentUploadForm />
-        </Route>
+        </Route> */}
         <Route exact path='/'>
           <MainPage />
         </Route>
