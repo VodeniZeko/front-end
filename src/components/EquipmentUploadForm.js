@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/uploadForm.scss";
 import useUpload from "../hooks/useUpload";
 import {
   Modal,

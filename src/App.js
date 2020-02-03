@@ -20,18 +20,16 @@ export default function App() {
         <Route exact path='/'>
           <MainPage />
         </Route>
-        <Route path="/login">
+        <Route path='/login'>
           <LoginModal />
         </Route>
-        <Route path="/signup">
+        <Route path='/signup'>
           <SignUpModal />
-
         </Route>
-        <Route path=''>
-        <Route path="/profile">
+        <Route path='/profile'>
           <Profile />
         </Route>
-        <Route path="">
+        <Route path=''>
           <Lost />
         </Route>
       </Switch>
