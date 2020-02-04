@@ -13,10 +13,10 @@ const Login = () => {
         setStatus(res.data);
         resetForm();
         console.log(res, `success`);
-        localStorage.setItem("token", res.data.payload);
+        localStorage.setItem("token", res.data.token);
         push("/profile");
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err) & alert("Invalid email or Password"))
       .finally();
   };
   return (
@@ -29,7 +29,6 @@ const Login = () => {
       //     .required("Required"),
       //   password: Yup.string()
       //     .required("No password provided.")
-      //     .min(8, "Password is too short - should be 8 chars minimum.")
       //     .matches(/(?=.*[0-9])/, "Password must contain a number.")
       // })}
     >
