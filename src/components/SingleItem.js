@@ -1,27 +1,82 @@
-import React from "react";
-import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { SingleItemContainer } from "../styles/styles.js";
+import { useDispatch, useSelector } from "react-redux";
+import { Fetch } from "../actions/Apicalls";
 
-const SingleItem = ({ products }) => {
-  const { item_name, img, description, condition, location } = products;
+const SingleItem = ({ match }) => {
+  const id = match.params.id;
+  console.log(id);
+  const products = useSelector(state => state.data);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(Fetch());
+  }, [dispatch]);
+
+  const item = products[`${id}` - 1];
+  console.log(item);
 
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant='top' src={img} />
-      <Card.Body>
-        <Card.Title>{item_name}</Card.Title>
-        <Card.Text>{description}</Card.Text>
-      </Card.Body>
-      <ListGroup className='list-group-flush'>
-        <ListGroupItem>condition: {condition}</ListGroupItem>
-        <ListGroupItem>Location: {location}</ListGroupItem>
-        <ListGroupItem>more text</ListGroupItem>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href='#'>Card Link</Card.Link>
-        <Card.Link href='#'>Another Link</Card.Link>
-      </Card.Body>
-    </Card>
+    <SingleItemContainer>
+      <div id="wrapper">
+        <div class="box">
+          <div class="main-container">
+            <div class="left-cl">
+              <NavLink to="/itemlist">
+                <div class="button-back">
+                  <span>
+                    <svg
+                      width="26px"
+                      height="26px"
+                      viewBox="63 67 26 26"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g
+                        id="Page-1"
+                        stroke="none"
+                        stroke-width="1"
+                        fill="none"
+                        fill-rule="evenodd"
+                        transform="translate(64.400240, 68.400000)"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M11.4176,0 C5.1104,0 0,5.1152 0,11.4216 C0,17.7304 5.1104,22.8392 11.4176,22.8392 C17.724,22.8392 22.8384,17.7304 22.8384,11.4216 C22.8384,5.1152 17.724,0 11.4176,0 L11.4176,0 Z"
+                          id="Stroke-1"
+                          stroke="#FFFFFF"
+                        ></path>
+                        <polyline
+                          id="Stroke-3"
+                          stroke="#FFFFFF"
+                          points="10.46576 16.58848 5.67376 11.79648 10.46576 7.00448"
+                        ></polyline>
+                        <path
+                          d="M17.26984,11.79656 L5.67384,11.79656"
+                          id="Stroke-5"
+                          stroke="#FFFFFF"
+                        ></path>
+                      </g>
+                    </svg>
+                  </span>
+                </div>
+              </NavLink>
+              <div class="diagonal"></div>
+              <img src="https://i.ytimg.com/vi/BEV7OD1tCC8/maxresdefault.jpg" />
+            </div>
+            <div class="right-cl">
+              <h1>Name</h1>
+              <h3>$100.00</h3>
+              <h4>Description</h4>
+              <p>something about the items</p>
+              <button class="basket">Add to Basket</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </SingleItemContainer>
   );
 };
-
 export default SingleItem;
