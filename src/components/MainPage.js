@@ -2,7 +2,7 @@ import React from "react";
 import { MainPageContainer } from "../styles/styles.js";
 import Typing from "../styles/Typing.js";
 import { NavLink } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const MainPage = () => {
   const loggedin = useSelector(state => state.loggedin);
@@ -35,7 +35,11 @@ const MainPage = () => {
           <NavLink to="/signup">
             <button className="btn">Join Today !</button>
           </NavLink>
-        ) : null}
+        ) : (
+          <NavLink to="/equipmentupload">
+            <button className="btn">Start Listing !</button>
+          </NavLink>
+        )}
       </div>
       <div className="imageContainer"></div>
       <div className="contentContainer">
