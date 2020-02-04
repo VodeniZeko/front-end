@@ -84,9 +84,10 @@ const Login = () => {
                 <span
                   style={{
                     position: "absolute",
-                    top: "100px",
-                    left: "70px",
-                    width: "1000px"
+                    top: "155px",
+                    right: "-147px",
+                    maxWidth: "1000px",
+                    width: "500px"
                   }}
                   className='input-feedback'>
                   {errors.password}
