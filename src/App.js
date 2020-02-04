@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import ItemList from "./components/ItemList";
 import LoginModal from "./components/LoginModal";
 import SignUpModal from "./components/SignUpModal";
 import Lost from "./components/Lost";
