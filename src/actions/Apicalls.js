@@ -5,7 +5,7 @@ export const Fetch = () => dispatch => {
   dispatch({ type: DATA_START });
 
   axiosWithAuth()
-    .get("/api/")
+    .get("/items")
     .then(
       res =>
         console.log(res, "res data") &
