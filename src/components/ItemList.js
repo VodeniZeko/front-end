@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import SingleItem from "./SingleItem";
 import { useDispatch, useSelector } from "react-redux";
 import { Fetch } from "../actions/Apicalls";
@@ -22,7 +21,7 @@ const ItemList = () => {
 
   useEffect(() => {
     dispatch(Fetch());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
