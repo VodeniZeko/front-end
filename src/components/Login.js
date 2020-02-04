@@ -1,76 +1,92 @@
 import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import axios from "axios";
-import "../styles/SignupLogin.scss";
+import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
-const Login = () => (
-  <Formik
-    initialValues={{ email: "", password: "" }}
-    onSubmit={(values, { setSubmitting }) => {
-      setTimeout(() => {
-        console.log("Logging in", values);
-        setSubmitting(false);
-      }, 500);
-    }}
-    validationSchema={Yup.object().shape({
-      email: Yup.string()
-        .email()
-        .required("Required"),
-      password: Yup.string()
-        .required("No password provided.")
-        .min(8, "Password is too short - should be 8 chars minimum.")
-        .matches(/(?=.*[0-9])/, "Password must contain a number.")
-    })}>
-    {props => {
-      const {
-        values,
-        touched,
-        errors,
-        isSubmitting,
-        handleChange,
-        handleBlur,
-        handleSubmit
-      } = props;
-      return (
-        <form onSubmit={handleSubmit}>
-          <label className='loginLabel' htmlFor='email'>
-            Email
-          </label>
-          <input
-            className='loginInput'
-            name='email'
-            type='text'
-            placeholder='Enter your email'
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.email && touched.email && (
-            <div className='input-feedback'>{errors.email}</div>
-          )}
-          <label className='loginLabel' htmlFor='email'>
-            Password
-          </label>
-          <input
-            className='loginInput'
-            name='password'
-            type='password'
-            placeholder='Enter your password'
-            value={values.password}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.password && touched.password && (
-            <div className='input-feedback'>{errors.password}</div>
-          )}
-          <button className='loginButton' type='submit' disabled={isSubmitting}>
-            Login
-          </button>
-        </form>
-      );
-    }}
-  </Formik>
-);
+const Login = () => {
+  const { push } = useHistory();
+  const handleSubmit = (values, { setStatus, resetForm }) => {
+    Axios.post(`https://usetechstuff.herokuapp.com/api/login`, values)
+
+      .then(res => {
+        setStatus(res.data);
+        resetForm();
+        console.log(res, `success`);
+        localStorage.setItem("token", res.data.payload);
+        push("/profile");
+      })
+      .catch(err => console.log(err))
+      .finally();
+  };
+  return (
+    <Formik
+      initialValues={{ username: "", password: "" }}
+      onSubmit={handleSubmit}
+      // validationSchema={Yup.object().shape({
+      //   username: Yup.string()
+      //     .username()
+      //     .required("Required"),
+      //   password: Yup.string()
+      //     .required("No password provided.")
+      //     .min(8, "Password is too short - should be 8 chars minimum.")
+      //     .matches(/(?=.*[0-9])/, "Password must contain a number.")
+      // })}
+    >
+      {props => {
+        const {
+          values,
+          touched,
+          errors,
+          isSubmitting,
+          handleChange,
+          handleBlur,
+          handleSubmit
+        } = props;
+        return (
+          <form onSubmit={handleSubmit}>
+            <label className='loginLabel' htmlFor='username'>
+              username
+            </label>
+            <input
+              className='loginInput'
+              name='username'
+              type='text'
+              placeholder='Enter your username'
+              value={values.username}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            {console.log(values, "values")}
+            {errors.username && touched.username && (
+              <div className='input-feedback'>{errors.username}</div>
+            )}
+            <label className='loginLabel' htmlFor='username'>
+              Password
+            </label>
+            <input
+              className='loginInput'
+              name='password'
+              type='password'
+              placeholder='Enter your password'
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+            {errors.password && touched.password && (
+              <div className='input-feedback'>{errors.password}</div>
+            )}
+            <button
+              className='loginButton'
+              type='submit'
+              disabled={isSubmitting}>
+              Login
+            </button>
+          </form>
+        );
+      }}
+    </Formik>
+  );
+};
 
 export default Login;

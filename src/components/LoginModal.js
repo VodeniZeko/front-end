@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import Login from "./Login";
 import MainPage from "./MainPage";
-import "../styles/SignupLogin.scss";
 
 const LoginModal = () => {
   const [show, setShow] = useState(true);
