@@ -2,6 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import "../styles/SignupLogin.scss";
 
 const Login = () => (
   <Formik
@@ -20,8 +21,7 @@ const Login = () => (
         .required("No password provided.")
         .min(8, "Password is too short - should be 8 chars minimum.")
         .matches(/(?=.*[0-9])/, "Password must contain a number.")
-    })}
-  >
+    })}>
     {props => {
       const {
         values,
@@ -34,37 +34,37 @@ const Login = () => (
       } = props;
       return (
         <form onSubmit={handleSubmit}>
-          <label className="loginLabel" htmlFor="email">
+          <label className='loginLabel' htmlFor='email'>
             Email
           </label>
           <input
-            className="loginInput"
-            name="email"
-            type="text"
-            placeholder="Enter your email"
+            className='loginInput'
+            name='email'
+            type='text'
+            placeholder='Enter your email'
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
           />
           {errors.email && touched.email && (
-            <div className="input-feedback">{errors.email}</div>
+            <div className='input-feedback'>{errors.email}</div>
           )}
-          <label className="loginLabel" htmlFor="email">
+          <label className='loginLabel' htmlFor='email'>
             Password
           </label>
           <input
-            className="loginInput"
-            name="password"
-            type="password"
-            placeholder="Enter your password"
+            className='loginInput'
+            name='password'
+            type='password'
+            placeholder='Enter your password'
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
           />
           {errors.password && touched.password && (
-            <div className="input-feedback">{errors.password}</div>
+            <div className='input-feedback'>{errors.password}</div>
           )}
-          <button className="loginButton" type="submit" disabled={isSubmitting}>
+          <button className='loginButton' type='submit' disabled={isSubmitting}>
             Login
           </button>
         </form>

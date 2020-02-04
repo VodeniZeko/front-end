@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FORM_CHANGE, RESET_FORM } from "../reducers";
 import { Send } from "../actions/Apicalls";
 import Loader from "react-loader-spinner";
-import ButtonGroup from "@bootstrap-styled/v4/lib/ButtonGroup";
+// import ButtonGroup from "@bootstrap-styled/v4/lib/ButtonGroup";
 
 const UploadInput = props => (
   <input

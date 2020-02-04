@@ -2,6 +2,7 @@ import React from "react";
 import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import "../styles/SignupLogin.scss";
 
 const SignUp = () => (
   <Formik
@@ -26,8 +27,7 @@ const SignUp = () => (
         .required("No password provided.")
         .min(8, "Password is too short - should be 8 chars minimum.")
         .matches(/(?=.*[0-9])/, "Password must contain a number.")
-    })}
-  >
+    })}>
     {props => {
       const {
         values,
@@ -40,58 +40,58 @@ const SignUp = () => (
       } = props;
       return (
         <form onSubmit={handleSubmit}>
-          <label className="signupLabel" htmlFor="text">
+          <label className='signupLabel' htmlFor='text'>
             Name
           </label>
           <Field
-            className="signupInput"
-            name="name"
-            type="text"
-            placeholder="Enter your name"
+            className='signupInput'
+            name='name'
+            type='text'
+            placeholder='Enter your name'
             value={values.name}
             onChange={handleChange}
             onBlur={handleBlur}
           />
           {errors.name && touched.name && (
-            <div className="input-feedback">{errors.name}</div>
+            <div className='input-feedback'>{errors.name}</div>
           )}
-          <label className="signupLabel" htmlFor="email">
+          <label className='signupLabel' htmlFor='email'>
             Email
           </label>
           <Field
-            className="signupInput"
-            name="email"
-            type="text"
-            placeholder="Enter your email"
+            className='signupInput'
+            name='email'
+            type='text'
+            placeholder='Enter your email'
             value={values.email}
             onChange={handleChange}
             onBlur={handleBlur}
           />
           {errors.email && touched.email && (
-            <div className="input-feedback">{errors.email}</div>
+            <div className='input-feedback'>{errors.email}</div>
           )}
-          <label className="signupLabel" htmlFor="email">
+          <label className='signupLabel' htmlFor='email'>
             Password
           </label>
           <Field
-            className="signupInput"
-            name="password"
-            type="password"
-            placeholder="Enter your password"
+            className='signupInput'
+            name='password'
+            type='password'
+            placeholder='Enter your password'
             value={values.password}
             onChange={handleChange}
             onBlur={handleBlur}
           />
           {errors.password && touched.password && (
-            <div className="input-feedback">{errors.password}</div>
+            <div className='input-feedback'>{errors.password}</div>
           )}
-          <label className="checkbox-container">I am:</label>
+          <label className='checkbox-container'>I am:</label>
           Owner
-          <Field type="checkbox" name="owner" checked={values.owner} />
-          <label className="checkbox-container">I am:</label>
+          <Field type='checkbox' name='owner' checked={values.owner} />
+          <label className='checkbox-container'>I am:</label>
           Renter
-          <Field type="checkbox" name="renter" checked={values.renter} />
-          <button className="signupButton" type="submit">
+          <Field type='checkbox' name='renter' checked={values.renter} />
+          <button className='signupButton' type='submit'>
             Sign up
           </button>
         </form>
