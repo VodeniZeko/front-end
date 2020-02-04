@@ -4,6 +4,8 @@ import { ProfileContainer } from "../styles/styles.js";
 import profile from "../assets/profile.svg";
 
 const Profile = () => {
+  var check = "	\u2713";
+  var noCheck = "	\u274C";
   return (
     <ProfileContainer>
       <div class="coverPhoto">
@@ -13,9 +15,8 @@ const Profile = () => {
           id="icon"
           src="https://sguru.org/wp-content/uploads/2017/06/cool-profile-pictures-63a5e8ee8cdcfab2f952bcd46a73e5c4.jpg"
         />
-
-        <h1>user</h1>
       </div>
+
       <ListGroup
         variant="flush"
         style={{
@@ -31,10 +32,14 @@ const Profile = () => {
           Verified info
         </ListGroup.Item>
         <ListGroup.Item style={{ border: "none" }}>
-          Email "email"
+          Email: "email" <span style={{ paddingLeft: "20px" }}>{check}</span>
         </ListGroup.Item>
-        <ListGroup.Item style={{ border: "none" }}>Phone number</ListGroup.Item>
-        <ListGroup.Item style={{ border: "none" }}>Facebook</ListGroup.Item>
+        <ListGroup.Item style={{ border: "none" }}>
+          Phone number: <span style={{ paddingLeft: "20px" }}>{noCheck}</span>
+        </ListGroup.Item>
+        <ListGroup.Item style={{ border: "none" }}>
+          Facebook: <span style={{ paddingLeft: "20px" }}>{noCheck}</span>
+        </ListGroup.Item>
       </ListGroup>
     </ProfileContainer>
   );
