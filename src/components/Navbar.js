@@ -1,22 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
-import { NavbarContainer } from "../styles/NavBarStyled";
+import { NavbarContainer } from "../styles/styles.js";
 
 const Navbar = () => {
   return (
     <NavbarContainer>
-      <NavLink to='/'>
+      <NavLink to="/">
         {" "}
-
         <div className="logo">
           <img src={`${logo}`} alt="logo" />
-          Shareable
+          <p>Shareable</p>
         </div>
       </NavLink>
-      <div className='nav-bar'>
-        <nav>
 
+      <div className="nav-bar">
+        <nav>
+          <NavLink to="/itemlist">
+            <span>See items!</span>
+          </NavLink>
           <NavLink to="/login">
             <span>Log in</span>
           </NavLink>
@@ -26,7 +28,7 @@ const Navbar = () => {
           <NavLink to="/profile">
             <span>Profile</span>
           </NavLink>
-          <div id='indicator'></div>
+          <div id="indicator"></div>
         </nav>
       </div>
     </NavbarContainer>

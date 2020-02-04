@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import ItemList from "./components/ItemList";
 import LoginModal from "./components/LoginModal";
 import SignUpModal from "./components/SignUpModal";
 import Lost from "./components/Lost";
@@ -15,11 +16,24 @@ export default function App() {
     <main>
       <Navbar />
       <Switch>
+<<<<<<< HEAD
         <PrivateRoute path='/equipmentupload' component={EquipmentUploadForm} />
         <Route exact path='/'>
           <MainPage />
         </Route>
         <Route path='/login'>
+=======
+        <Route path="/EquipmentUpload">
+          <EquipmentUploadForm />
+        </Route>
+        <Route exact path="/">
+          <MainPage />
+        </Route>
+        <Route path="/itemlist">
+          <ItemList />
+        </Route>
+        <Route path="/login">
+>>>>>>> bf559f27e4d0bc7e8d7ad8ddffc2a4d8b78d8ba4
           <LoginModal />
         </Route>
         <Route path='/signup'>
