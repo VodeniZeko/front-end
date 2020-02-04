@@ -6,6 +6,7 @@ export const RESET_FORM = "RESET_FORM";
 const uuidv4 = require("uuid/v4");
 
 const initialState = {
+  currentuser: {},
   loggedin: false,
   item: {
     id: uuidv4(),

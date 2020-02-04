@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import { NavbarContainer } from "../styles/styles.js";
@@ -22,9 +22,14 @@ const Navbar = () => {
             <span>See items!</span>
           </NavLink>
           {!loggedin ? (
-            <NavLink to='/login'>
-              <span>Log in</span>
-            </NavLink>
+            <>
+              <NavLink to='/login'>
+                <span>Log in</span>
+              </NavLink>
+              <NavLink to='/signup'>
+                <span>Sign up</span>
+              </NavLink>
+            </>
           ) : (
             <NavLink
               onClick={() =>
@@ -35,9 +40,6 @@ const Navbar = () => {
               <span>Log out</span>
             </NavLink>
           )}
-          <NavLink to='/signup'>
-            <span>Sign up</span>
-          </NavLink>
           <NavLink to='/profile'>
             <span>Profile</span>
           </NavLink>
