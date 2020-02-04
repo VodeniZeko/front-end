@@ -7,17 +7,18 @@ import LoginModal from "./components/LoginModal";
 import SignUpModal from "./components/SignUpModal";
 import Lost from "./components/Lost";
 import MainPage from "./components/MainPage";
-import EquipmentUploadForm from "./components/EquipmentUploadForm";
+// import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
     <main>
       <Navbar />
       <Switch>
-        <Route path="/EquipmentUpload">
+        {/* <Route path='/EquipmentUpload'>
           <EquipmentUploadForm />
-        </Route>
+        </Route> */}
         <Route exact path="/">
           <MainPage />
         </Route>
@@ -30,7 +31,6 @@ export default function App() {
         <Route path="/signup">
           <SignUpModal />
         </Route>
-        {/* <Route path=''> */}
         <Route path="/profile">
           <Profile />
         </Route>
@@ -38,6 +38,7 @@ export default function App() {
           <Lost />
         </Route>
       </Switch>
+      <Footer />
     </main>
   );
 }
