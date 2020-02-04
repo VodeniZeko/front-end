@@ -23,7 +23,7 @@
 //   <input
 //     type="file"
 //     accept="image/*"
-//     name="img-loader-input"
+//     // name="img-loader-input"
 //     multiple
 //     {...props}
 //   />

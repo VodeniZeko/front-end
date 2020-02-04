@@ -1,6 +1,7 @@
 import React from "react";
 import { MainPageContainer } from "../styles/styles.js";
 import Typing from "../styles/Typing.js";
+import { NavLink } from "react-router-dom";
 
 const MainPage = () => {
   return (
@@ -27,7 +28,9 @@ const MainPage = () => {
           <br /> over <strong>300$</strong> a month on Shareable, <br />
           the world largest tech share marketplace.{" "}
         </h2>
-        <button>Get Started</button>
+        <NavLink to="/signup">
+          <button className="btn">Join Today !</button>
+        </NavLink>
       </div>
       <div className="imageContainer"></div>
       <div className="contentContainer">

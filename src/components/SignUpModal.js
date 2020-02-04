@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import SignUp from "./SignUp";
+import MainPage from "./MainPage";
 
 const LoginModal = () => {
   const [show, setShow] = useState(true);
 
   return (
     <div>
+      <MainPage />
       <Modal
         show={show}
         onHide={() => setShow(false)}
