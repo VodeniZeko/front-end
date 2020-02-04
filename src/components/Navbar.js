@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import { NavbarContainer } from "../styles/styles.js";
@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 const Navbar = () => {
   const loggedin = useSelector(state => state.loggedin);
+  useEffect(() => {}, [loggedin]);
   const dispatch = useDispatch();
   return (
     <NavbarContainer>
