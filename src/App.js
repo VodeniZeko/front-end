@@ -22,9 +22,7 @@ export default function App() {
         <Route exact path="/">
           <MainPage />
         </Route>
-        <Route path="/itemlist">
-          <ItemList />
-        </Route>
+        {/* <PrivateRoute path="/itemlist" component={ItemList} /> */}
         <Route path="/login">
           <LoginModal />
         </Route>

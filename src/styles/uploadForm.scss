@@ -1,4 +1,3 @@
-/*  EQUIPMENT COMP STARTS */
 .container {
   max-width: 900px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -6,6 +5,9 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+body {
+  padding-right: 0 !important;
 }
 h1,
 h2,
@@ -90,7 +92,7 @@ h6 {
 }
 
 .modal {
-  top: 20px !important;
+  top: 250px !important;
   text-align: center !important;
 }
 
@@ -104,9 +106,6 @@ h6 {
   text-align: center;
   margin-bottom: 1%;
   font-weight: 800;
-}
-
-.fileupload {
 }
 
 .UploadForm {
@@ -132,6 +131,7 @@ h6 {
   display: flex;
   flex-direction: column;
   width: 80%;
+  margin-left: 26%;
 }
 
 .sc-fzXfPI {

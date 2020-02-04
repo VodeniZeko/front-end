@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ListGroup } from "react-bootstrap";
+import axios from "axios";
 import { ProfileContainer } from "../styles/styles.js";
 import profile from "../assets/profile.svg";
 
 const Profile = () => {
   var check = "	\u2713";
   var noCheck = "	\u274C";
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://rickandmortyapi.com/api/character/")
+      .then(res => {
+        setUser(res.data.results[0]);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+  console.log(user);
   return (
     <ProfileContainer>
       <div class="coverPhoto">
         <img id="cover" src={`${profile}`} />
 
-        <img
-          id="icon"
-          src="https://sguru.org/wp-content/uploads/2017/06/cool-profile-pictures-63a5e8ee8cdcfab2f952bcd46a73e5c4.jpg"
-        />
+        <img id="icon" src={user.image} />
       </div>
 
       <ListGroup
@@ -32,7 +43,11 @@ const Profile = () => {
           Verified info
         </ListGroup.Item>
         <ListGroup.Item style={{ border: "none" }}>
-          Email: "email" <span style={{ paddingLeft: "20px" }}>{check}</span>
+          Name: {user.name} <span style={{ paddingLeft: "20px" }}>{check}</span>
+        </ListGroup.Item>
+        <ListGroup.Item style={{ border: "none" }}>
+          Email: {user.gender}{" "}
+          <span style={{ paddingLeft: "20px" }}>{check}</span>
         </ListGroup.Item>
         <ListGroup.Item style={{ border: "none" }}>
           Phone number: <span style={{ paddingLeft: "20px" }}>{noCheck}</span>

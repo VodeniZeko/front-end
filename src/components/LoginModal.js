@@ -13,18 +13,17 @@ const LoginModal = () => {
       <Modal
         show={show}
         onHide={() => setShow(false)}
-        dialogClassName="modal-90w"
-        centered="true"
-      >
+        dialogClassName='modal-90w'
+        centered='true'>
         <Modal.Header closeButton>
-          <Modal.Title id="SignUp">Welcome back</Modal.Title>
+          <Modal.Title id='SignUp'>Welcome back</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Login />
           <Modal.Footer>
             <span>Don't have an account?</span>
-            <NavLink to="/signup">
-              <Button variant="outline-secondary">Sign up!</Button>
+            <NavLink to='/signup'>
+              <Button variant='outline-secondary'>Sign up!</Button>
             </NavLink>
           </Modal.Footer>
         </Modal.Body>
