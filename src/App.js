@@ -12,29 +12,27 @@ import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 
-
 export default function App() {
   return (
     <main>
       <Navbar />
       <Switch>
-        <Route path="/EquipmentUpload">
+        <Route path='/EquipmentUpload'>
           <EquipmentUploadForm />
         </Route>
-        <Route exact path="/">
+        <Route exact path='/'>
           <MainPage />
         </Route>
-        {/* <PrivateRoute path="/itemlist" component={ItemList} /> */}
-        <Route path="/login">
+        <PrivateRoute path='/itemlist' component={ItemList} />
+        <Route path='/login'>
           <LoginModal />
         </Route>
-        <Route path="/signup">
+        <Route path='/signup'>
           <SignUpModal />
         </Route>
-        <Route path="/profile">
-          <Profile />
-        </Route>
-        <Route path="">
+        <PrivateRoute path='/profile' component={Profile} />
+
+        <Route path=''>
           <Lost />
         </Route>
       </Switch>
