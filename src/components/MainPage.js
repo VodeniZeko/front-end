@@ -2,8 +2,11 @@ import React from "react";
 import { MainPageContainer } from "../styles/styles.js";
 import Typing from "../styles/Typing.js";
 import { NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 const MainPage = () => {
+  const loggedin = useSelector(state => state.loggedin);
+
   return (
     <MainPageContainer>
       <div className="headerContainer">
@@ -28,9 +31,11 @@ const MainPage = () => {
           <br /> over <strong>300$</strong> a month on Shareable, <br />
           the world largest tech share marketplace.{" "}
         </h2>
-        <NavLink to="/signup">
-          <button className="btn">Join Today !</button>
-        </NavLink>
+        {!loggedin ? (
+          <NavLink to="/signup">
+            <button className="btn">Join Today !</button>
+          </NavLink>
+        ) : null}
       </div>
       <div className="imageContainer"></div>
       <div className="contentContainer">
