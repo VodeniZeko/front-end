@@ -46,8 +46,8 @@ const EquipmentUploadForm = props => {
   const [modal, setModal] = useState(true);
   const dispatch = useDispatch();
   const item = useSelector(state => state.item);
-  const price = useSelector(state => state.item.rentalPrice);
-  const [radiobutton, setRadiobutton] = useState(false);
+  // const price = useSelector(state => state.item.rentalPrice);
+  // const [radiobutton, setRadiobutton] = useState(false);
 
   const handlesubmit = e => {
     e.preventDefault();
@@ -63,13 +63,13 @@ const EquipmentUploadForm = props => {
     e.preventDefault();
     dispatch({ type: FORM_CHANGE, name: e.target.name, value: e.target.value });
   };
-  const priceChange = e => {
-    dispatch({
-      type: "RATE_CHANGE",
-      name: e.target.name,
-      value: e.target.value
-    });
-  };
+  // const priceChange = e => {
+  //   dispatch({
+  //     type: "RATE_CHANGE",
+  //     name: e.target.name,
+  //     value: e.target.value
+  //   });
+  // };
 
   return (
     <div className='container'>
@@ -177,25 +177,22 @@ const EquipmentUploadForm = props => {
                 Product Rental Price: <br /> (Can Choose Price per Hour and/or
                 Per Day)
               </p>
-              {!radiobutton ? (
-                <Input
+              {/* <Input
                   type='number'
                   name='hourlyRate'
                   value={price.hourlyRate}
                   placeholder='Price per Hr'
                   onChange={priceChange}
-                />
-              ) : (
-                <Input
-                  type='number'
-                  name='dailyRate'
-                  value={price.dailyRate}
-                  placeholder='Price per Day'
-                  onChange={priceChange}
-                />
-              )}
+                /> */}
+              <Input
+                type='number'
+                name='dailyRate'
+                value={item.rentalPrice}
+                placeholder='Price per Day'
+                onChange={handlechange}
+              />
             </Label>
-            <ButtonGroup>
+            {/* <ButtonGroup>
               <Button
                 style={{ marginRight: "1%" }}
                 color='info'
@@ -210,8 +207,7 @@ const EquipmentUploadForm = props => {
                 active={radiobutton}>
                 Price Per Day
               </Button>
-            </ButtonGroup>
-            {console.log(price, "price")}
+            </ButtonGroup> */}
 
             <div>
               <button className='btn22' type='submit'>

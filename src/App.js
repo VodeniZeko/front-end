@@ -8,16 +8,14 @@ import Lost from "./components/Lost";
 import MainPage from "./components/MainPage";
 import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
+import PrivateRoute from "./utils/PrivateRoute";
 
 export default function App() {
   return (
     <main>
       <Navbar />
       <Switch>
-        <Route path='/EquipmentUpload'>
-          <EquipmentUploadForm />
-        </Route>{" "}
-        */}
+        <PrivateRoute path='/equipmentupload' component={EquipmentUploadForm} />
         <Route exact path='/'>
           <MainPage />
         </Route>

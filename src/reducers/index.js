@@ -11,10 +11,7 @@ const initialState = {
     name: "",
     description: "",
     availability: true,
-    rentalPrice: {
-      hourlyRate: Number,
-      dailyRate: Number
-    },
+    rentalPrice: Number,
     condition: "",
     location: "",
     imgs: []
