@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import ItemList from "./components/ItemList";
 import LoginModal from "./components/LoginModal";
 import SignUpModal from "./components/SignUpModal";
 import Lost from "./components/Lost";
@@ -14,11 +15,14 @@ export default function App() {
     <main>
       <Navbar />
       <Switch>
-        {/* <Route path="/EquipmentUpload">
+        <Route path="/EquipmentUpload">
           <EquipmentUploadForm />
-        </Route> */}
+        </Route>
         <Route exact path="/">
           <MainPage />
+        </Route>
+        <Route path="/itemlist">
+          <ItemList />
         </Route>
         <Route path="/login">
           <LoginModal />
