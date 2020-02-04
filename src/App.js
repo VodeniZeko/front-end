@@ -11,27 +11,28 @@ import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
+import SingleItem from "./components/SingleItem";
 
 export default function App() {
   return (
     <main>
       <Navbar />
       <Switch>
-        <PrivateRoute path='/Equipmentupload' component={EquipmentUploadForm} />
+        <PrivateRoute path="/Equipmentupload" component={EquipmentUploadForm} />
 
-        <Route exact path='/'>
+        <Route exact path="/">
           <MainPage />
         </Route>
-        <PrivateRoute path='/itemlist' component={ItemList} />
-        <Route path='/login'>
+        <PrivateRoute path="/itemlist" component={ItemList} />
+        <Route path="/login">
           <LoginModal />
         </Route>
-        <Route path='/signup'>
+        <Route path="/signup">
           <SignUpModal />
         </Route>
-        <PrivateRoute path='/profile' component={Profile} />
-
-        <Route path=''>
+        <PrivateRoute path="/profile" component={Profile} />
+        <Route path="/:id" component={SingleItem} />
+        <Route path="">
           <Lost />
         </Route>
       </Switch>
