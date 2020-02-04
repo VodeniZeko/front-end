@@ -14,8 +14,7 @@ const LoginModal = () => {
       <Modal
         show={show}
         onHide={() => setShow(false) & push("/")}
-        dialogClassName='modal-90w'
-        centered='true'>
+        dialogClassName='modal-90w'>
         <Modal.Header closeButton>
           <Modal.Title id='SignUp'>Welcome back</Modal.Title>
         </Modal.Header>
