@@ -10,6 +10,8 @@ import MainPage from "./components/MainPage";
 import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
 import Footer from "./components/Footer";
+import PrivateRoute from "./utils/PrivateRoute";
+
 
 export default function App() {
   return (
