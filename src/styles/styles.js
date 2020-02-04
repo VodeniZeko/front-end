@@ -42,7 +42,7 @@ export const NavbarContainer = styled.div`
   nav {
     right: 0;
     left: 0;
-    width: 400px;
+    /* width: 400px; */
     align-self: center;
     transform: translateY(-50%);
   }

@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import Login from "./Login";
 import MainPage from "./MainPage";
 
 const LoginModal = () => {
   const [show, setShow] = useState(true);
+  const { push } = useHistory();
 
   return (
     <div>
       <MainPage />
       <Modal
         show={show}
-        onHide={() => setShow(false)}
-        dialogClassName='modal-90w'
-        centered='true'>
+        onHide={() => setShow(false) & push("/")}
+        dialogClassName='modal-90w'>
         <Modal.Header closeButton>
           <Modal.Title id='SignUp'>Welcome back</Modal.Title>
         </Modal.Header>
