@@ -155,28 +155,40 @@ export const FormContainer = styled.div`
   }
 
   button {
-    margin: 5px 0px;
-    padding: 10px 15px;
-    background-color: rgb(70, 153, 179);
-    color: white;
-    border: 1px solid rgb(70, 153, 179);
-    background-color: 250ms;
-  }
-
-  button:hover {
+    color: #1D9AF2;
+    background-color: #292D3E;
+    border: 1px solid #1D9AF2;
+    border-radius: 4px;
+    padding: 15px 18px 30px 15px
     cursor: pointer;
-    background-color: white;
-    color: rgb(70, 153, 179);
-  }
+    font-size:14px;
+    box-shadow: 0 0 4px #999;
+    background-position: center;
+    transition: background 0.8s;
+    align-self:center;
+    margin:2em;
+    width: 35%;
+    height: 34px;
+    }
+    button:hover {
+    background:#47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+    color: white;
+    }
+    button:active{
+    background-color:#292d3e;
+    background-size: 100%;
+    transition: background 0s;
+    }
 
-  .optionsContainer {
-    margin: 15px 0px;
-  }
+    button:focus{
+      outline:0;
+    }
 `;
 export const MainPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-width:400px;
+
   .headerContainer {
     text-align: center;
     display: flex;
@@ -205,7 +217,7 @@ export const MainPageContainer = styled.div`
     font-weight:bold;
   }
   }
-  .btn {
+  button {
     color: #1D9AF2;
     background-color: #292D3E;
     border: 1px solid #1D9AF2;
@@ -227,17 +239,17 @@ export const MainPageContainer = styled.div`
       width: 30%;
     }
     }
-    .headerContainer > button:hover {
+    button:hover {
     background:#47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
     color: white;
     }
-    .headerContainer > button:active{
+    button:active{
     background-color:#292d3e;
     background-size: 100%;
     transition: background 0s;
     }
 
-    .headerContainer > button:focus{
+    button:focus{
       outline:0;
     }
     .imageContainer {
