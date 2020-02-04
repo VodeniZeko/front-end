@@ -17,9 +17,8 @@ export default function App() {
     <main>
       <Navbar />
       <Switch>
-        <Route path='/EquipmentUpload'>
-          <EquipmentUploadForm />
-        </Route>
+        <PrivateRoute path='/Equipmentupload' component={EquipmentUploadForm} />
+
         <Route exact path='/'>
           <MainPage />
         </Route>
