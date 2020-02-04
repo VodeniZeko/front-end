@@ -60,7 +60,11 @@ const SignUp = () => {
                 onBlur={handleBlur}
               />
               {errors.username && touched.username && (
-                <div className='input-feedback'>{errors.username}</div>
+                <span
+                  style={{ position: "absolute", top: "70px", left: "70px" }}
+                  className='input-feedback'>
+                  {errors.username}
+                </span>
               )}
               {/* <label className='signupLabel' htmlFor='email'>
               Email
@@ -91,7 +95,17 @@ const SignUp = () => {
                 onBlur={handleBlur}
               />
               {errors.password && touched.password && (
-                <div className='input-feedback'>{errors.password}</div>
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "155px",
+                    right: "-147px",
+                    maxWidth: "1000px",
+                    width: "500px"
+                  }}
+                  className='input-feedback'>
+                  {errors.password}
+                </span>
               )}
 
               <Field

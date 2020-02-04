@@ -18,12 +18,6 @@ const Navbar = () => {
       </NavLink>
       <div className='nav-bar'>
         <nav>
-          <NavLink to='/equipmentupload'>
-            <span>Equipment Upload</span>
-          </NavLink>
-          <NavLink to='/itemlist'>
-            <span>See items!</span>
-          </NavLink>
           {!loggedin ? (
             <>
               <NavLink to='/login'>
@@ -34,14 +28,22 @@ const Navbar = () => {
               </NavLink>
             </>
           ) : (
-            <NavLink
-              onClick={() =>
-                localStorage.removeItem("token") &
-                dispatch({ type: "LOGGED_STATUS", payload: false })
-              }
-              to='/login'>
-              <span>Log out</span>
-            </NavLink>
+            <>
+              <NavLink to='/equipmentupload'>
+                <span>Equipment Upload</span>
+              </NavLink>
+              <NavLink to='/itemlist'>
+                <span>See items!</span>
+              </NavLink>
+              <NavLink
+                onClick={() =>
+                  localStorage.removeItem("token") &
+                  dispatch({ type: "LOGGED_STATUS", payload: false })
+                }
+                to='/'>
+                <span>Log out</span>
+              </NavLink>
+            </>
           )}
           <NavLink to='/profile'>
             <span>Profile</span>
