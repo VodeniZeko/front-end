@@ -29,15 +29,13 @@ const Login = () => {
       <Formik
         initialValues={{ username: "", password: "" }}
         onSubmit={handleSubmit}
-        // validationSchema={Yup.object().shape({
-        //   username: Yup.string()
-        //     .username()
-        //     .required("Required"),
-        //   password: Yup.string()
-        //     .required("No password provided.")
-        //     .matches(/(?=.*[0-9])/, "Password must contain a number.")
-        // })}
-      >
+        validationSchema={Yup.object().shape({
+          username: Yup.string().required("Required"),
+          password: Yup.string()
+            .required("No password provided.")
+            .min(6, "Password is too short - should be 6 chars minimum.")
+            .matches(/(?=.*[0-9])/, "Password must contain a number.")
+        })}>
         {props => {
           const {
             values,
@@ -50,42 +48,52 @@ const Login = () => {
           } = props;
           return (
             <form onSubmit={handleSubmit}>
-              <label className="loginLabel" htmlFor="username">
+              <label className='loginLabel' htmlFor='username'>
                 username
               </label>
               <input
-                className="loginInput"
-                name="username"
-                type="text"
-                placeholder="Enter your username"
+                className='loginInput'
+                name='username'
+                type='text'
+                placeholder='Enter your username'
                 value={values.username}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
               {console.log(values, "values")}
               {errors.username && touched.username && (
-                <div className="input-feedback">{errors.username}</div>
+                <span
+                  style={{ position: "absolute", top: "70px", left: "70px" }}
+                  className='input-feedback'>
+                  {errors.username}
+                </span>
               )}
-              <label className="loginLabel" htmlFor="username">
+              <label className='loginLabel' htmlFor='username'>
                 Password
               </label>
               <input
-                className="loginInput"
-                name="password"
-                type="password"
-                placeholder="Enter your password"
+                className='loginInput'
+                name='password'
+                type='password'
+                placeholder='Enter your password'
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
               {errors.password && touched.password && (
-                <div className="input-feedback">{errors.password}</div>
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "100px",
+                    left: "70px",
+                    width: "1000px"
+                  }}
+                  className='input-feedback'>
+                  {errors.password}
+                </span>
               )}
-              <button
-                className="loginButton"
-                type="submit"
-                disabled={isSubmitting}
-              >
+              <br />
+              <button className='loginButton' type='submit'>
                 Login
               </button>
             </form>
