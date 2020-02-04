@@ -114,7 +114,65 @@ export const NavbarContainer = styled.div`
     transform: scale(1);
   }
 `;
+export const FormContainer = styled.div`
+  h1 {
+    text-align: center;
+  }
 
+  form {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  label,
+  input {
+    display: block;
+    width: 100%;
+  }
+
+  label {
+    margin: 5px;
+    height: 22px;
+  }
+
+  input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #777;
+  }
+
+  input.error {
+    border-color: red;
+  }
+
+  .input-feedback {
+    color: rgb(235, 54, 54);
+    margin-top: 10px;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    margin: 5px 0px;
+    padding: 10px 15px;
+    background-color: rgb(70, 153, 179);
+    color: white;
+    border: 1px solid rgb(70, 153, 179);
+    background-color: 250ms;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(70, 153, 179);
+  }
+
+  .optionsContainer {
+    margin: 15px 0px;
+  }
+`;
 export const MainPageContainer = styled.div`
   display: flex;
   flex-direction: column;
