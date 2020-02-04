@@ -9,6 +9,7 @@ import Lost from "./components/Lost";
 import MainPage from "./components/MainPage";
 import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
+import PrivateRoute from "./utils/PrivateRoute";
 
 export default function App() {
   return (
@@ -21,9 +22,7 @@ export default function App() {
         <Route exact path='/'>
           <MainPage />
         </Route>
-        <Route path='/itemlist'>
-          <ItemList />
-        </Route>
+        <PrivateRoute path='/itemlist' component={ItemList} />
         <Route path='/login'>
           <LoginModal />
         </Route>

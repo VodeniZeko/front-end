@@ -6,6 +6,7 @@ export const RESET_FORM = "RESET_FORM";
 const uuidv4 = require("uuid/v4");
 
 const initialState = {
+  loggedin: false,
   item: {
     id: uuidv4(),
     name: "",
@@ -78,6 +79,11 @@ export default (state = initialState, action) => {
         }
       };
     }
+    case "LOGGED_STATUS":
+      return {
+        ...state,
+        loggedin: action.payload
+      };
 
     default:
       return state;
