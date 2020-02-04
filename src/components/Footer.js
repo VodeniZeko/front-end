@@ -13,7 +13,7 @@ export default function() {
             </a>
             <p>
               Stay in the know. Receive our weekly newsletter and stay on top of
-              what's available on Proxibid.
+              what's available on Shareable.
               <br style={{ margin: "0 0 12px 0" }} />
               <a href="#">View this week's newsletter</a>
             </p>
