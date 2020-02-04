@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik } from "formik";
+import { FormContainer } from "../styles/styles.js";
 import * as Yup from "yup";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -23,71 +24,74 @@ const Login = () => {
       .finally();
   };
   return (
-    <Formik
-      initialValues={{ username: "", password: "" }}
-      onSubmit={handleSubmit}
-      // validationSchema={Yup.object().shape({
-      //   username: Yup.string()
-      //     .username()
-      //     .required("Required"),
-      //   password: Yup.string()
-      //     .required("No password provided.")
-      //     .matches(/(?=.*[0-9])/, "Password must contain a number.")
-      // })}
-    >
-      {props => {
-        const {
-          values,
-          touched,
-          errors,
-          isSubmitting,
-          handleChange,
-          handleBlur,
-          handleSubmit
-        } = props;
-        return (
-          <form onSubmit={handleSubmit}>
-            <label className='loginLabel' htmlFor='username'>
-              username
-            </label>
-            <input
-              className='loginInput'
-              name='username'
-              type='text'
-              placeholder='Enter your username'
-              value={values.username}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {console.log(values, "values")}
-            {errors.username && touched.username && (
-              <div className='input-feedback'>{errors.username}</div>
-            )}
-            <label className='loginLabel' htmlFor='username'>
-              Password
-            </label>
-            <input
-              className='loginInput'
-              name='password'
-              type='password'
-              placeholder='Enter your password'
-              value={values.password}
-              onChange={handleChange}
-              onBlur={handleBlur}
-            />
-            {errors.password && touched.password && (
-              <div className='input-feedback'>{errors.password}</div>
-            )}
-            <button
-              className='loginButton'
-              type='submit'
-              disabled={isSubmitting}>
-              Login
-            </button>
-          </form>
-        );
-      }}
-    </Formik>
+    <FormContainer>
+      <Formik
+        initialValues={{ username: "", password: "" }}
+        onSubmit={handleSubmit}
+        // validationSchema={Yup.object().shape({
+        //   username: Yup.string()
+        //     .username()
+        //     .required("Required"),
+        //   password: Yup.string()
+        //     .required("No password provided.")
+        //     .matches(/(?=.*[0-9])/, "Password must contain a number.")
+        // })}
+      >
+        {props => {
+          const {
+            values,
+            touched,
+            errors,
+            isSubmitting,
+            handleChange,
+            handleBlur,
+            handleSubmit
+          } = props;
+          return (
+            <form onSubmit={handleSubmit}>
+              <label className="loginLabel" htmlFor="username">
+                username
+              </label>
+              <input
+                className="loginInput"
+                name="username"
+                type="text"
+                placeholder="Enter your username"
+                value={values.username}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {console.log(values, "values")}
+              {errors.username && touched.username && (
+                <div className="input-feedback">{errors.username}</div>
+              )}
+              <label className="loginLabel" htmlFor="username">
+                Password
+              </label>
+              <input
+                className="loginInput"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+                value={values.password}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.password && touched.password && (
+                <div className="input-feedback">{errors.password}</div>
+              )}
+              <button
+                className="loginButton"
+                type="submit"
+                disabled={isSubmitting}
+              >
+                Login
+              </button>
+            </form>
+          );
+        }}
+      </Formik>
+    </FormContainer>
   );
 };
 
