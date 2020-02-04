@@ -22,24 +22,21 @@ const Profile = () => {
   console.log(user);
   return (
     <ProfileContainer>
-      <div class="coverPhoto">
-        <img id="cover" src={`${profile}`} />
+      <div class='coverPhoto'>
+        <img id='cover' src={`${profile}`} />
 
-        <img id="icon" src={user.image} />
+        <img id='icon' src={user.image} />
       </div>
-
       <ListGroup
-        variant="flush"
+        variant='flush'
         style={{
           padding: "2em 5em",
           fontSize: "2.5rem",
           height: "50vh",
           border: "none"
-        }}
-      >
+        }}>
         <ListGroup.Item
-          style={{ border: "none", fontFamily: "'Nixie One', cursive" }}
-        >
+          style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
           Verified info
         </ListGroup.Item>
         <ListGroup.Item style={{ border: "none" }}>

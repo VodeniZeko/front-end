@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -10,10 +10,19 @@ import MainPage from "./components/MainPage";
 import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
 import Footer from "./components/Footer";
-import PrivateRoute from "./utils/PrivateRoute";
+import PrivateRoute from "./utils/PrivateRoute":
 import SingleItem from "./components/SingleItem";
+import { useDispatch } from "react-redux";
+
 
 export default function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      dispatch({ type: "LOGGED_STATUS", payload: true });
+    }
+  }, [dispatch]);
+
   return (
     <main>
       <Navbar />
