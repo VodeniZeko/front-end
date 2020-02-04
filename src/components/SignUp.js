@@ -100,6 +100,11 @@ const SignUp = () => {
                 as="select"
                 name="department"
                 placeholder="select"
+                style={{
+                  margin: "10px",
+                  background: "transparent",
+                  height: "30px"
+                }}
               >
                 <option value="" disabled selected>
                   Select a Role
