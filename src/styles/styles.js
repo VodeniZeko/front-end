@@ -1150,7 +1150,8 @@ img {
 }
 
 /* BUTTON BACK ICON */
-.button-back span {
+.button-back-span {
+  background:red;
   position: absolute;
   margin-top: -100px;
   margin-left: 10px;
@@ -1172,7 +1173,6 @@ img {
 
 
 span {
-  background:red;
   top:25%;
   transform: scale(1.5);
     border-radius: 1em;
