@@ -63,17 +63,26 @@ const SingleItem = ({ match }) => {
                     </div>
                   </NavLink>
                   <div class="diagonal"></div>
-                  <img src="https://i.ytimg.com/vi/BEV7OD1tCC8/maxresdefault.jpg" />
+                  <img src={el.imgs} />
                 </div>
                 <div class="right-cl">
                   <h1>{el.item_name}</h1>
                   <h3>$100.00</h3>
                   <h4>Description {a}</h4>
                   <p>{el.description}</p>
+                  <p>
+                    Daily rate:{" "}
+                    <i style={{ color: "green", fontSize: "1.5em" }}>
+                      {el.daily_rate}$
+                    </i>
+                  </p>
                   <p className="availabilityNumber">
                     Availability:{" "}
-                    <span style={{ color: "red" }}>{el.availability}</span>
+                    <i style={{ color: "red", fontSize: "1.5em" }}>
+                      {el.availability}
+                    </i>
                   </p>
+
                   <button class="basket">Add to Basket</button>
                 </div>
               </div>
