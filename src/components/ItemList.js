@@ -24,6 +24,7 @@ const ItemList = () => {
   };
   return (
     <main>
+
       <SearchForm handleInput={handleInput} search={search} />
       <Scroll>
         <ItemContainer>
@@ -48,6 +49,7 @@ const ItemList = () => {
                     {item.condition}
                   </span>
                 </div>
+
 
                 <div class="card-body">
                   <h2 class="card-body-heading">{item.item_name}</h2>

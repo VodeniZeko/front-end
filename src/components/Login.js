@@ -19,8 +19,11 @@ const Login = props => {
         resetForm();
         console.log(res, `success`);
         localStorage.setItem("token", res.data.token);
+        localStorage.setItem("CURRENTUSER", JSON.stringify(res.data.user));
+
         dispatch({ type: "LOGGED_STATUS", payload: true });
         dispatch({ type: "CURRENT_USER", payload: res.data.user });
+
         dispatch(Fetchusers());
         push(`/profile`);
       })

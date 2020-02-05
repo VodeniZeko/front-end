@@ -33,8 +33,7 @@ const Navbar = props => {
             <>
               <NavLink
                 to={{
-                  pathname: `/equipmentupload/${currentuser.id}`,
-                  state: { value: currentuser }
+                  pathname: `/equipmentupload/${currentuser.id}`
                 }}>
                 <span>Equipment Upload</span>
               </NavLink>
@@ -43,7 +42,7 @@ const Navbar = props => {
               </NavLink>
               <NavLink
                 onClick={() =>
-                  localStorage.removeItem("token") &
+                  localStorage.removeItem("token") & localStorage.removeItem("CURRENTUSER") &
                   dispatch({ type: "LOGGED_STATUS", payload: false })
                 }
                 to='/'>
