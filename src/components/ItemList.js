@@ -10,14 +10,18 @@ const ItemList = () => {
   const products = useSelector(state => state.data);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);
+  useEffect(() => {
+    var filtered = products.filter(x => {
+      return x.item_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+    });
+    setItems(filtered);
+  }, [search]);
 
-  const filtered = products.filter(x => {
-    return x.item_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
-  });
   console.log(products);
   const handleInput = e => {
     setSearch(e.target.value);
@@ -28,7 +32,7 @@ const ItemList = () => {
       <SearchForm handleInput={handleInput} search={search} />
       <Scroll>
         <ItemContainer>
-          {filtered.map(item => (
+          {items.map(item => (
             <div class="container">
               <div class="card u-clearfix">
                 <div class="card-media">
