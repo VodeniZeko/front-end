@@ -12,6 +12,8 @@ import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 import { useDispatch, useSelector } from "react-redux";
+import SingleItem from "./components/SingleItem";
+
 
 export default function App() {
   const dispatch = useDispatch();
@@ -31,19 +33,19 @@ export default function App() {
           component={EquipmentUploadForm}
         />
 
-        <Route exact path='/'>
+        <Route exact path="/">
           <MainPage />
         </Route>
-        <PrivateRoute path='/itemlist' component={ItemList} />
-        <Route path='/login'>
+        <PrivateRoute path="/itemlist" component={ItemList} />
+        <Route path="/login">
           <LoginModal />
         </Route>
-        <Route path='/signup'>
+        <Route path="/signup">
           <SignUpModal />
         </Route>
-        <PrivateRoute path='/profile' component={Profile} />
-
-        <Route path=''>
+        <PrivateRoute path="/profile" component={Profile} />
+        <Route path="/:id" component={SingleItem} />
+        <Route path="">
           <Lost />
         </Route>
       </Switch>
