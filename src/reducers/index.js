@@ -10,13 +10,13 @@ const initialState = {
   loggedin: false,
   item: {
     id: uuidv4(),
-    name: "",
+    item_name: "",
     description: "",
     availability: true,
-    rentalPrice: Number,
+    daily_rate: Number,
     condition: "",
-    location: "",
-    imgs: []
+    location: ""
+    // imgs: []
   },
   isloading: false,
   data: [],
@@ -55,7 +55,7 @@ export default (state = initialState, action) => {
         ...state,
         item: {
           ...state.item,
-          rentalPrice: {
+          daily_rate: {
             ...state.item.rentalPrice,
             [action.name]: action.value
           }
@@ -67,10 +67,10 @@ export default (state = initialState, action) => {
         ...state,
         item: {
           id: uuidv4(),
-          name: "",
+          item_name: "",
           description: "",
           availability: true,
-          rentalPrice: {
+          daily_rate: {
             hourlyRate: 0,
             dailyRate: 0
           },
@@ -84,6 +84,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loggedin: action.payload
+      };
+    case "CURRENT_USER":
+      return {
+        ...state,
+        currentuser: action.payload
       };
 
     default:
