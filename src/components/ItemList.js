@@ -9,24 +9,24 @@ import { Fetch } from "../actions/Apicalls";
 const ItemList = () => {
   const products = useSelector(state => state.data);
   const dispatch = useDispatch();
-  // const [items, setItems] = useState([]);
-  // const [search, setSearch] = useState("");
+  const [items, setItems] = useState();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);
 
-  // useEffect(() => {
-  //   var results = products.filter(x => {
-  //     x.item_name.toLowerCase().includes(search.toLowerCase());
-  //   });
-  //   setItems(results);
-  // }, [search]);
+  useEffect(() => {
+    var results = products.filter(x => {
+      x.item_name.toLowerCase().includes(search.toLowerCase());
+    });
+    setItems(results);
+  }, [search]);
 
-  // const handleInput = e => {
-  //   setSearch(e.target.value);
-  // };
-  console.log(`***********`, products);
+  const handleInput = e => {
+    setSearch(e.target.value);
+  };
+  console.log(`***********`, items);
   return (
     <main>
       <SearchForm />

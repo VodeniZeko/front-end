@@ -37,7 +37,7 @@ const MainPage = () => {
             <button className="btn">Join Today !</button>
           </NavLink>
         ) : (
-          <NavLink to="/equipmentupload">
+          <NavLink to="/equipmentupload/undefined">
             <button className="btn">Start Listing!</button>
           </NavLink>
         )}

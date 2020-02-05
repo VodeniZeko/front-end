@@ -871,7 +871,7 @@ export const ItemContainer = styled.div`
     position: absolute;
     left: 82px;
     text-transform: uppercase;
-    top: 59px;
+    top: 192px;
   }
 
   .card-media-tag-orange {
