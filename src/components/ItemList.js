@@ -18,7 +18,7 @@ const ItemList = () => {
   const filtered = products.filter(x => {
     return x.item_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
   });
-
+  console.log(products);
   const handleInput = e => {
     setSearch(e.target.value);
   };
