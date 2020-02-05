@@ -56,17 +56,20 @@ const Profile = props => {
           src={user.image}
           alt=''
         />
+
       </div>
       <ListGroup
-        variant='flush'
+        variant="flush"
         style={{
           padding: "2em 5em",
           fontSize: "2.5rem",
           height: "50vh",
           border: "none"
-        }}>
+        }}
+      >
         <ListGroup.Item
-          style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+          style={{ border: "none", fontFamily: "'Nixie One', cursive" }}
+        >
           Verified info
         </ListGroup.Item>
         {console.log(props, "props")}

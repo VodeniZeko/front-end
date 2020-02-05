@@ -5,15 +5,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { Fetch } from "../actions/Apicalls";
 
 const SingleItem = ({ match }) => {
+  const a = "	\u25BC";
+  const smile = "	\u263A";
+  const sad = "	\u2639";
   const id = match.params.id;
-  console.log(id);
   const products = useSelector(state => state.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);
-  console.log(products);
 
   return (
     <SingleItemContainer>
@@ -25,7 +26,7 @@ const SingleItem = ({ match }) => {
                 <div class="left-cl">
                   <NavLink to="/itemlist">
                     <div class="button-back">
-                      <span>
+                      <span className="button-back-span">
                         <svg
                           width="26px"
                           height="26px"
@@ -64,16 +65,27 @@ const SingleItem = ({ match }) => {
                     </div>
                   </NavLink>
                   <div class="diagonal"></div>
-                  <img src="https://i.ytimg.com/vi/BEV7OD1tCC8/maxresdefault.jpg" />
+                  <img src={el.imgs} />
                 </div>
                 <div class="right-cl">
                   <h1>{el.item_name}</h1>
-                  <h3>$100.00</h3>
-                  <h4>Description</h4>
+                  <h3>
+                    {" "}
+                    Daily rate:
+                    <i style={{ color: "green", fontSize: "1.5em" }}>
+                      {el.daily_rate}$
+                    </i>
+                  </h3>
+                  <h4>Description {a}</h4>
                   <p>{el.description}</p>
+
                   <p className="availabilityNumber">
-                    Availability: {el.availability}
+                    Availability:{" "}
+                    <span style={{ color: "green", fontSize: "1.5em" }}>
+                      {el.availability > 0 ? `Yes${smile}` : `${sad}`}
+                    </span>
                   </p>
+
                   <button class="basket">Add to Basket</button>
                 </div>
               </div>
