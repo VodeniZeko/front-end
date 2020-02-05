@@ -3,20 +3,23 @@ export const DATA_SUCCESS = "DATA_SUCCESS";
 export const DATA_FAILURE = "DATA_FAILURE";
 export const FORM_CHANGE = "FORM_CHANGE";
 export const RESET_FORM = "RESET_FORM";
+export const EDIT_CHANGE = "EDIT_CHANGE";
 const uuidv4 = require("uuid/v4");
 
+const setid = window.localStorage.getItem("CURRENTUSER");
+
 const initialState = {
-  currentuser: {},
+  currentuser: JSON.parse(setid),
   loggedin: false,
   item: {
-    id: uuidv4(),
+    // id: uuidv4(),
     item_name: "",
     description: "",
     availability: true,
     daily_rate: Number,
     condition: "",
-    location: ""
-    // imgs: []
+    location: "",
+    imgs: ""
   },
   isloading: false,
   data: [],
@@ -70,13 +73,9 @@ export default (state = initialState, action) => {
           item_name: "",
           description: "",
           availability: true,
-          daily_rate: {
-            hourlyRate: 0,
-            dailyRate: 0
-          },
+          daily_rate: Number,
           condition: "",
-          location: "",
-          imgs: []
+          location: ""
         }
       };
     }
@@ -89,6 +88,19 @@ export default (state = initialState, action) => {
       return {
         ...state,
         currentuser: action.payload
+      };
+    case EDIT_CHANGE:
+      return {
+        ...state,
+        item: {
+          id: action.id,
+          item_name: action.name,
+          description: action.description,
+          availability: action.availability,
+          daily_rate: action.rate,
+          condition: action.condition,
+          location: action.location
+        }
       };
 
     default:
