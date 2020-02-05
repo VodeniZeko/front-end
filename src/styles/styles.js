@@ -1016,14 +1016,14 @@ height:80vh;
 
 /* RIGHT COLUMN */
 .right-cl {
-  margin: 0 20px 0 0px;
+  margin: -70px 0px 0 0px;
   flex: 1;
   z-index: 98;
 }
 
 
 h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Libre Baskerville', serif;
   font-weight: 300;
   font-size: 35px;
   color: #9B9B9B;
@@ -1032,7 +1032,8 @@ h1 {
 }
 
 h3 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  font-weight:bolder;
   font-weight: 400;
   font-size: 20px;
   color: #9B9B9B;
@@ -1041,8 +1042,9 @@ h3 {
 }
 
 h4 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
+  font-family: 'Libre Baskerville', serif;
+  font-weight:bolder;
+ 
   text-transform: uppercase;
   font-size: 10px;
   color: #9B9B9B;
@@ -1052,8 +1054,9 @@ h4 {
 }
 
 p {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-family: 'Libre Baskerville', serif;
+  font-weight:bolder;
+  
   font-size: 10px;
   color: #9B9B9B;
   letter-spacing: 1px;
@@ -1062,20 +1065,25 @@ p {
 .availabilityNumber {
 font-weight: bolder;
 }
+img {
+  border-radius: 30px 0px;
+}
 
 .basket {
   background-color: #FF7371;
   border: none;
-  padding: 20px 50px;
+  padding: 16px 20px;
   border-radius: 100px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  margin-left: 34px;
+    margin-bottom: 10px;
+  font-family: 'Nixie One', cursive;
+  font-weight:bolder;
   font-size: 12px;
   text-transform: uppercase;
   color: #FFF;
   letter-spacing: 1.98px;
-
   margin-top: 50px;
+ 
 
   /* ANIMATION */
   -o-transition:color .3s ease-out, background .3s ease-in;
@@ -1090,6 +1098,9 @@ font-weight: bolder;
   -moz-transition:color .1s ease-out, transform .1s ease-in;
   -webkit-transition:color .1s ease-out, transform .1s ease-in;
   transition:color .1s ease-out, transform .1s ease-in;
+}
+.basket:focus{
+  outline:0;
 }
 
 .basket:before {
@@ -1112,7 +1123,7 @@ font-weight: bolder;
   width: 100px;
   height: 495px;
   margin-left: 149px;
-  margin-top: -308px;
+  margin-top: -318px;
   background: lightgray;
   z-index: -1;
   /* Skew */
@@ -1129,7 +1140,6 @@ font-weight: bolder;
   top: 0;
   border-top: 120px solid #FF7372;
   border-right: 70px solid transparent;
-
   -webkit-transform:rotate(360deg)
 
   /* ANIMATION */

@@ -5,15 +5,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Fetch } from "../actions/Apicalls";
 
 const SingleItem = ({ match }) => {
+  const a = "	\u25BC";
   const id = match.params.id;
-  console.log(id);
   const products = useSelector(state => state.data);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);
-  console.log(products);
 
   return (
     <SingleItemContainer>
@@ -69,10 +68,11 @@ const SingleItem = ({ match }) => {
                 <div class="right-cl">
                   <h1>{el.item_name}</h1>
                   <h3>$100.00</h3>
-                  <h4>Description</h4>
+                  <h4>Description {a}</h4>
                   <p>{el.description}</p>
                   <p className="availabilityNumber">
-                    Availability: {el.availability}
+                    Availability:{" "}
+                    <span style={{ color: "red" }}>{el.availability}</span>
                   </p>
                   <button class="basket">Add to Basket</button>
                 </div>
