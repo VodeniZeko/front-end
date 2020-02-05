@@ -34,11 +34,7 @@ const ItemList = () => {
           <div class="container">
             <div class="card u-clearfix">
               <div class="card-media">
-                <img
-                  src="https://i.ytimg.com/vi/BEV7OD1tCC8/maxresdefault.jpg"
-                  alt=""
-                  class="card-media-img"
-                />
+                <img src={item.img} alt="" class="card-media-img" />
                 <div class="card-media-preview u-flex-center">
                   <svg
                     fill="#ffffff"

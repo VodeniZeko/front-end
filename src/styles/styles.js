@@ -668,7 +668,7 @@ export const FooterContainer = styled.div`
     display: block;
     width: 77px;
     height: 24px;
-    background: url("https://www.proxibid.com/images/footer-logo-thefinest.png")
+    
       top left no-repeat;
     text-indent: -9999px;
   }
@@ -1059,6 +1059,10 @@ p {
   font-size: 10px;
   color: #9B9B9B;
   letter-spacing: 1px;
+}
+
+.availabilityNumber {
+font-weight: bolder;
 }
 
 .basket {
