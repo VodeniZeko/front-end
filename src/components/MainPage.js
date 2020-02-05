@@ -1,5 +1,6 @@
 import React from "react";
 import { MainPageContainer } from "../styles/styles.js";
+import { Cta } from "../styles/styles.js";
 import Testimonials from "./Testimonials";
 import Typing from "../styles/Typing.js";
 import { NavLink } from "react-router-dom";
@@ -101,7 +102,28 @@ const MainPage = () => {
           <div className="timeline-end">Get payed</div>
         </section>
       </div>
+
       <Testimonials />
+      <Cta>
+        <div class="hero">
+          <div class="wrapper">
+            <h1>Start earning today </h1>
+            <p>
+              Join hundreds of thousands of hosts on Shareable and start earning
+              tomorrow.
+            </p>
+            {!loggedin ? (
+              <NavLink to="/signup">
+                <button className="btn">Start Today!</button>
+              </NavLink>
+            ) : (
+              <NavLink to="/itemlist">
+                <button className="btn">See Listings!</button>
+              </NavLink>
+            )}
+          </div>
+        </div>
+      </Cta>
     </MainPageContainer>
   );
 };

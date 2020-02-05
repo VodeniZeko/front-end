@@ -1252,3 +1252,48 @@ export const TestimonialContainer = styled.div`
     left: 18%;
   }
 `;
+
+export const Cta = styled.div`
+  .hero {
+    background: #eee;
+    margin-top: 25px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: -webkit-center;
+
+    h1 {
+      font-size: 42px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .cta {
+      display: block;
+      width: 200px;
+      padding: 8px 12px;
+      background: dodgerblue;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 300;
+      letter-spacing: 0.068em;
+      transition: all 400ms ease;
+      height: 32px;
+      line-height: 32px;
+      &:hover {
+        background: darken(dodgerblue, 20%);
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    .wrapper {
+      width: 100%;
+    }
+  }
+`;
