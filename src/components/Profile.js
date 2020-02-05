@@ -34,29 +34,20 @@ const Profile = props => {
   console.log(user);
   return (
     <ProfileContainer>
-      <div style={{ height: "50vh" }} class='coverPhoto'>
-        <div>
-          <NavLink to='/PersonalItems'>
+      <div class="coverPhoto">
+        {/* <div>
+          <NavLink to="/PersonalItems">
             <h2 style={{ color: "whitesmoke" }}>My Items</h2>
           </NavLink>
 
           {console.log(items, "items")}
           <div></div>
-        </div>
-        <img
-          style={{ position: "absolute", top: "255px" }}
-          id='cover'
-          src={`${profile}`}
-          alt=''
-        />
+        </div> */}
 
-        <img
-          style={{ position: "absolute", top: "480px" }}
-          id='icon'
-          src={user.image}
-          alt=''
-        />
-
+        <img style={{ top: "255px" }} id="cover" src={`${profile}`} alt="" />
+      </div>
+      <div>
+        <img style={{ top: "480px" }} id="icon" src={user.image} alt="" />
       </div>
       <ListGroup
         variant="flush"

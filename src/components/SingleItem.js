@@ -11,7 +11,7 @@ const SingleItem = ({ match }) => {
   const id = match.params.id;
   const products = useSelector(state => state.data);
   const dispatch = useDispatch();
-  //s
+
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);

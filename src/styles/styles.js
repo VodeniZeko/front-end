@@ -439,9 +439,13 @@ export const MainPageContainer = styled.div`
 `;
 
 export const ProfileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   .coverPhoto {
     width: 100%;
-    height: 30vh;
+    height: 28vh;
     background-color: #3b5998;
   }
 
@@ -459,10 +463,8 @@ export const ProfileContainer = styled.div`
   #icon {
     height: 13em;
     width: 13em;
-    position: relative;
-    top: -120px;
     border: solid #fff 6px;
-    left: 10%;
+    margin: -69px 0px 0px 70px;
     border-radius: 100%;
   }
 
