@@ -67,15 +67,16 @@ const SingleItem = ({ match }) => {
                 </div>
                 <div class="right-cl">
                   <h1>{el.item_name}</h1>
-                  <h3>$100.00</h3>
-                  <h4>Description {a}</h4>
-                  <p>{el.description}</p>
-                  <p>
-                    Daily rate:{" "}
+                  <h3>
+                    {" "}
+                    Daily rate:
                     <i style={{ color: "green", fontSize: "1.5em" }}>
                       {el.daily_rate}$
                     </i>
-                  </p>
+                  </h3>
+                  <h4>Description {a}</h4>
+                  <p>{el.description}</p>
+
                   <p className="availabilityNumber">
                     Availability:{" "}
                     <i style={{ color: "red", fontSize: "1.5em" }}>

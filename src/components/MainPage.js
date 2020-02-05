@@ -1,5 +1,6 @@
 import React from "react";
 import { MainPageContainer } from "../styles/styles.js";
+import Testimonials from "./Testimonials";
 import Typing from "../styles/Typing.js";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -100,6 +101,7 @@ const MainPage = () => {
           <div className="timeline-end">Get payed</div>
         </section>
       </div>
+      <Testimonials />
     </MainPageContainer>
   );
 };

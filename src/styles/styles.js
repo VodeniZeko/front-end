@@ -268,10 +268,10 @@ export const MainPageContainer = styled.div`
   }
   .conference-timeline {
     position: relative;
-    max-width: 920px;
+    max-width: 1115px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 5em;
+    padding: 10em 0em;
   }
   .conference-timeline .timeline-start,
   .conference-timeline .timeline-end {
@@ -321,7 +321,7 @@ export const MainPageContainer = styled.div`
     border: 1px solid #ddd;
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-    padding: 27px 25px;
+    padding: 49px 0px;
   }
   .timeline-article p {
     margin: 0 0 0 60px;
@@ -1178,4 +1178,77 @@ span {
     border-radius: 1em;
 }
 
+`;
+
+export const TestimonialContainer = styled.div`
+  .container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    *zoom: 1;
+  }
+  .grid-testimonials {
+    overflow: hidden;
+    padding-top: 3.125em;
+    border-top: dashed;
+  }
+  .grid-testimonials li {
+    float: left;
+    list-style-type: none;
+    padding-bottom: 3.125em;
+  }
+  .grid-testimonials p {
+    line-height: 1.5em;
+    margin: 0;
+    font-size: 1.5em;
+    font-family: "Nixie One", cursive;
+    font-weight: bolder;
+  }
+  .grid-testimonials-citation {
+    color: green;
+    display: block;
+    font-size: 1.125em;
+    font-weight: 700;
+    padding-top: 3em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .grid-testimonials li div {
+    border: 10px solid #6fb2f9;
+    padding: 2.125em 7.638888888888889%;
+    position: relative;
+  }
+  .grid-testimonials .quote-arrow {
+    background: #fff;
+    border-right: 10px solid #6fb2f9;
+    border-bottom: 10px solid #6fb2f9;
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    margin-left: -25px;
+    width: 40px;
+    height: 40px;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+  @media screen and (min-width: 50em) {
+    .grid-testimonials li {
+      margin-right: 5%;
+      width: 30%;
+    }
+    .grid-testimonials li:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  .testimonialImage {
+    background-image: url("https://img.icons8.com/color/1600/circled-user-male-skin-type-1-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 10em;
+    width: 10em;
+    border-radius: 100%;
+    left: 18%;
+  }
 `;
