@@ -190,7 +190,7 @@ export const MainPageContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  min-width:400px;
+  min-width: 400px;
 
   .headerContainer {
     text-align: center;
@@ -222,11 +222,11 @@ export const MainPageContainer = styled.div`
   }
 
   button {
-    color: #1D9AF2;
-    background-color: #292D3E;
-    border: 1px solid #1D9AF2;
+    color: #1d9af2;
+    background-color: #292d3e;
+    border: 1px solid #1d9af2;
     border-radius: 4px;
-    padding: 15px 18px 30px 15px;
+    padding: 8px 18px 30px 15px;
     cursor: pointer;
     height: 40px;
     font-size: 14px;
@@ -242,39 +242,39 @@ export const MainPageContainer = styled.div`
     @media (max-width: 800px) {
       width: 30%;
     }
+  }
 
-    }
-    button:hover {
-    background:#47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+  button:hover {
+    background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%)
+      center/15000%;
     color: white;
-    }
-    button:active{
-    background-color:#292d3e;
+  }
+
+  button:active {
+    background-color: #292d3e;
     background-size: 100%;
     transition: background 0s;
   }
-
-
-    button:focus{
-      outline:0;
-    }
-    .imageContainer {
-      background-image:url(${image});
-      height:40vh;
-      background-size:cover;
-
+  button:focus {
+    outline: 0;
+  }
+  .imageContainer {
+    background-image: url(${image});
+    height: 40vh;
+    background-size: cover;
+  }
   .contentContainer {
     margin-bottom: 2em;
   }
-  #conference-timeline {
+  .conference-timeline {
     position: relative;
     max-width: 920px;
     width: 100%;
     margin: 0 auto;
     padding-top: 5em;
   }
-  #conference-timeline .timeline-start,
-  #conference-timeline .timeline-end {
+  .conference-timeline .timeline-start,
+  .conference-timeline .timeline-end {
     display: table;
     font-family: "Nixie One", cursive;
     font-size: 18px;
@@ -288,7 +288,7 @@ export const MainPageContainer = styled.div`
     text-align: center;
     margin: 0 auto;
   }
-  #conference-timeline .conference-center-line {
+  .conference-timeline .conference-center-line {
     position: absolute;
     width: 3px;
     height: 100%;
@@ -389,8 +389,6 @@ export const MainPageContainer = styled.div`
     font-size: 18px;
     line-height: 10px;
   }
-
-  /*===== // Vertical Timeline =====*/
 
   @media only screen and (max-width: 830px) {
     .contentContainer #conference-timeline .timeline-start,

@@ -37,13 +37,14 @@ const MainPage = () => {
           </NavLink>
         ) : (
           <NavLink to="/equipmentupload">
-            <button className="btn">Start Listing !</button>
+            <button className="btn">Start Listing!</button>
           </NavLink>
         )}
       </div>
+
       <div className="imageContainer"></div>
       <div className="contentContainer">
-        <section id="conference-timeline">
+        <section className="conference-timeline">
           <div className="timeline-start">List your item</div>
           <div className="conference-center-line"></div>
           <div className="conference-timeline-content">
@@ -79,24 +80,24 @@ const MainPage = () => {
                 <span className="month">price</span>
               </div>
             </div>
-            <div class="timeline-article">
-              <div class="content-left-container">
-                <div class="content-left">
+            <div className="timeline-article">
+              <div className="content-left-container">
+                <div className="content-left">
                   <p>
                     Sit back and wait for earning to start, get payed by direct
                     deposit or paypal, with peace of mind knowing that we got
                     you covered and insured!{" "}
-                    <span class="article-number">03</span>
+                    <span className="article-number">03</span>
                   </p>
                 </div>
               </div>
-              <div class="meta-date">
-                <span class="date">Make</span>
-                <span class="month">$$$</span>
+              <div className="meta-date">
+                <span className="date">Make</span>
+                <span className="month">$$$</span>
               </div>
             </div>
           </div>
-          <div class="timeline-end">Get payed</div>
+          <div className="timeline-end">Get payed</div>
         </section>
       </div>
     </MainPageContainer>
