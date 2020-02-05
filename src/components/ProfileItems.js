@@ -9,6 +9,7 @@ import { useStyles } from "../styles/ProfileItemsStyled";
 
 const ProfileItems = props => {
   const classes = useStyles();
+  //FIX THIS THING WHEN YOU CAN
 
   return (
     <div className={classes.root}>
