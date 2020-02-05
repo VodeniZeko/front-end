@@ -12,8 +12,8 @@ import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
 import { useDispatch, useSelector } from "react-redux";
-import SingleItem from "./components/SingleItem";
 
+import SingleItem from "./components/SingleItem";
 
 export default function App() {
   const dispatch = useDispatch();
