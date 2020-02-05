@@ -14,8 +14,9 @@ import PrivateRoute from "./utils/PrivateRoute";
 import { useDispatch, useSelector } from "react-redux";
 
 import SingleItem from "./components/SingleItem";
+import ProfileItemGrid from "./components/ProfileItemGrid";
 
-export default function App() {
+export default function App(props) {
   const dispatch = useDispatch();
   const currentuser = useSelector(state => state.currentuser);
   useEffect(() => {
@@ -33,19 +34,21 @@ export default function App() {
           component={EquipmentUploadForm}
         />
 
-        <Route exact path="/">
+        <Route exact path='/'>
           <MainPage />
         </Route>
-        <PrivateRoute path="/itemlist" component={ItemList} />
-        <Route path="/login">
+        <PrivateRoute path='/itemlist' component={ItemList} />
+        <PrivateRoute path='/PersonalItems' component={ProfileItemGrid} />
+
+        <Route path='/login'>
           <LoginModal />
         </Route>
-        <Route path="/signup">
+        <Route path='/signup'>
           <SignUpModal />
         </Route>
-        <PrivateRoute path="/profile" component={Profile} />
-        <Route path="/:id" component={SingleItem} />
-        <Route path="">
+        <PrivateRoute path='/profile' component={Profile} />
+        <Route path='/:id' component={SingleItem} />
+        <Route path=''>
           <Lost />
         </Route>
       </Switch>

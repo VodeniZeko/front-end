@@ -21,28 +21,28 @@ import Loader from "react-loader-spinner";
 import { useHistory, useParams } from "react-router-dom";
 // import ButtonGroup from "@bootstrap-styled/v4/lib/ButtonGroup";
 
-// const UploadInput = props => (
-//   <input
-//     type='file'
-//     accept='image/*'
-//     name='img-loader-input'
-//     multiple
-//     {...props}
-//   />
-// );
+const UploadInput = props => (
+  <input
+    type='file'
+    accept='image/*'
+    name='img-loader-input'
+    multiple
+    {...props}
+  />
+);
 
-const EquipmentUploadForm = props => {
-  // const {
-  //   files,
-  //   pending,
-  //   next,
-  //   uploading,
-  //   uploaded,
-  //   status,
-  //   onSubmit,
-  //   onChange,
-  //   deleteimg
-  // } = useUpload();
+const EditEquipmentForm = props => {
+  const {
+    files,
+    pending,
+    next,
+    uploading,
+    uploaded,
+    status,
+    onSubmit,
+    onChange,
+    deleteimg
+  } = useUpload();
 
   const { push } = useHistory();
 
@@ -78,7 +78,7 @@ const EquipmentUploadForm = props => {
       {/* ------- FILES UPLOADED MSG ------ */}
       <h1>Product Upload</h1>
 
-      {/* <form className='form' onSubmit={onSubmit}>
+      <form className='form' onSubmit={onSubmit}>
         {status === "FILES_UPLOADED" && (
           <div className='success-container'>
             <Modal isOpen={modal}>
@@ -129,21 +129,10 @@ const EquipmentUploadForm = props => {
             timeout={3000} //3 secs
           />
         ) : null}
-      </form> */}
+      </form>
       <div className='UploadForm'>
         <Form onSubmit={handlesubmit}>
           <FormGroup>
-            <Label>
-              <p> Image URL </p>
-              <Input
-                required
-                type='text'
-                name='imgs'
-                value={item.imgs}
-                placeholder='Image Location'
-                onChange={handlechange}
-              />
-            </Label>
             <Label>
               <p> Name of Product </p>
               <Input
@@ -235,4 +224,4 @@ const EquipmentUploadForm = props => {
   );
 };
 
-export default EquipmentUploadForm;
+export default EditEquipmentForm;
