@@ -10,10 +10,9 @@ import MainPage from "./components/MainPage";
 import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
 import Footer from "./components/Footer";
-import PrivateRoute from "./utils/PrivateRoute":
+import PrivateRoute from "./utils/PrivateRoute";
 import SingleItem from "./components/SingleItem";
 import { useDispatch } from "react-redux";
-
 
 export default function App() {
   const dispatch = useDispatch();
