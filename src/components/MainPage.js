@@ -1,5 +1,6 @@
 import React from "react";
 import { MainPageContainer } from "../styles/styles.js";
+import Testimonials from "./Testimonials";
 import Typing from "../styles/Typing.js";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -36,7 +37,7 @@ const MainPage = () => {
             <button className="btn">Join Today !</button>
           </NavLink>
         ) : (
-          <NavLink to="/equipmentupload">
+          <NavLink to="/equipmentupload/undefined">
             <button className="btn">Start Listing!</button>
           </NavLink>
         )}
@@ -100,6 +101,7 @@ const MainPage = () => {
           <div className="timeline-end">Get payed</div>
         </section>
       </div>
+      <Testimonials />
     </MainPageContainer>
   );
 };
