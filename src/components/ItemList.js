@@ -26,7 +26,7 @@ const ItemList = () => {
   // const handleInput = e => {
   //   setSearch(e.target.value);
   // };
-
+  console.log(`***********`, products);
   return (
     <main>
       <SearchForm />
@@ -36,7 +36,7 @@ const ItemList = () => {
             <div class="container">
               <div class="card u-clearfix">
                 <div class="card-media">
-                  <img src={item.img} alt="" class="card-media-img" />
+                  <img src={item.imgs} alt="" class="card-media-img" />
                   <div class="card-media-preview u-flex-center">
                     <svg
                       fill="#ffffff"
@@ -146,7 +146,7 @@ const ItemList = () => {
                     </li>
                   </ul>
                   <a href="#/" class="card-button card-button-cta">
-                    Buy $12.99
+                    {item.daily_rate} $
                   </a>
                   <NavLink to={`/${item.id}`}>
                     <a href="#/" class="card-button card-button-link">

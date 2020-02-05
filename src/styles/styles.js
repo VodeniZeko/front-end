@@ -979,7 +979,7 @@ export const ItemContainer = styled.div`
 `;
 
 export const SingleItemContainer = styled.div`
-height:80vh;
+height:60vh;
 
 #wrapper {
   background-color: #FFF;
@@ -1124,7 +1124,6 @@ img {
   height: 495px;
   margin-left: 149px;
   margin-top: -318px;
-  background: lightgray;
   z-index: -1;
   /* Skew */
   -webkit-transform: skew(-30deg);
@@ -1138,7 +1137,7 @@ img {
   width: 0;
   height: 0;
   top: 0;
-  border-top: 120px solid #FF7372;
+  margin-top:196px;
   border-right: 70px solid transparent;
   -webkit-transform:rotate(360deg)
 
@@ -1171,16 +1170,12 @@ img {
   transform: scale(1.03);
 }
 
-.button-back:hover {
-  border-top: 120px solid #FF935E;
-  cursor: pointer;
-}
 
-.button-back span:hover {
-  -ms-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+span {
+  background:red;
+  top:25%;
+  transform: scale(1.5);
+    border-radius: 1em;
 }
-
 
 `;
