@@ -9,30 +9,33 @@ import { Fetch } from "../actions/Apicalls";
 const ItemList = () => {
   const products = useSelector(state => state.data);
   const dispatch = useDispatch();
-  const [items, setItems] = useState();
+  const [items, setItems] = useState([]);
   const [search, setSearch] = useState("");
 
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);
 
-  useEffect(() => {
-    var results = products.filter(x => {
-      x.item_name.toLowerCase().includes(search.toLowerCase());
-    });
-    setItems(results);
-  }, [search]);
+  // useEffect(() => {
+  //   var results = products.filter(x => {
+  //     x.item_name.toLowerCase().includes(search.toLowerCase());
+  //   });
+  //   setItems(results);
+  // }, [search]);
+  const filtered = products.filter(x => {
+    return x.item_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+  });
 
   const handleInput = e => {
     setSearch(e.target.value);
   };
-  console.log(`***********`, items);
+  console.log(`***********`, products);
   return (
     <main>
-      <SearchForm />
+      <SearchForm handleInput={handleInput} search={search} />
       <Scroll>
         <ItemContainer>
-          {products.map(item => (
+          {filtered.map(item => (
             <div class="container">
               <div class="card u-clearfix">
                 <div class="card-media">
