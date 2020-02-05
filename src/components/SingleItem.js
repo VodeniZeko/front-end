@@ -6,6 +6,8 @@ import { Fetch } from "../actions/Apicalls";
 
 const SingleItem = ({ match }) => {
   const a = "	\u25BC";
+  const smile = "	\u263A";
+  const sad = "	\u2639";
   const id = match.params.id;
   const products = useSelector(state => state.data);
   const dispatch = useDispatch();
@@ -24,7 +26,7 @@ const SingleItem = ({ match }) => {
                 <div class="left-cl">
                   <NavLink to="/itemlist">
                     <div class="button-back">
-                      <span>
+                      <span className="button-back-span">
                         <svg
                           width="26px"
                           height="26px"
@@ -79,9 +81,9 @@ const SingleItem = ({ match }) => {
 
                   <p className="availabilityNumber">
                     Availability:{" "}
-                    <i style={{ color: "red", fontSize: "1.5em" }}>
-                      {el.availability}
-                    </i>
+                    <span style={{ color: "green", fontSize: "1.5em" }}>
+                      {el.availability > 0 ? `Yes${smile}` : `${sad}`}
+                    </span>
                   </p>
 
                   <button class="basket">Add to Basket</button>
