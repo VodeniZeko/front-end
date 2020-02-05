@@ -11,11 +11,13 @@ import EquipmentUploadForm from "./components/EquipmentUploadForm";
 import Profile from "./components/Profile";
 import Footer from "./components/Footer";
 import PrivateRoute from "./utils/PrivateRoute";
+import { useDispatch, useSelector } from "react-redux";
+
 import SingleItem from "./components/SingleItem";
-import { useDispatch } from "react-redux";
 
 export default function App() {
   const dispatch = useDispatch();
+  const currentuser = useSelector(state => state.currentuser);
   useEffect(() => {
     if (localStorage.getItem("token")) {
       dispatch({ type: "LOGGED_STATUS", payload: true });
@@ -26,7 +28,10 @@ export default function App() {
     <main>
       <Navbar />
       <Switch>
-        <PrivateRoute path="/Equipmentupload" component={EquipmentUploadForm} />
+        <PrivateRoute
+          path={`/equipmentupload/${currentuser.id}`}
+          component={EquipmentUploadForm}
+        />
 
         <Route exact path="/">
           <MainPage />

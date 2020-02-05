@@ -4,36 +4,41 @@ import logo from "../assets/logo.svg";
 import { NavbarContainer } from "../styles/styles.js";
 import { useSelector, useDispatch } from "react-redux";
 
-const Navbar = () => {
+const Navbar = props => {
   const loggedin = useSelector(state => state.loggedin);
+  const currentuser = useSelector(state => state.currentuser);
   useEffect(() => {}, [loggedin]);
   const dispatch = useDispatch();
   return (
     <NavbarContainer>
-      <NavLink to="/">
+      <NavLink to='/'>
         {" "}
-        <div className="logo">
-          <img src={`${logo}`} alt="logo" />
+        <div className='logo'>
+          <img src={`${logo}`} alt='logo' />
           <p>Shareable</p>
         </div>
       </NavLink>
-      <div className="nav-bar">
+      <div className='nav-bar'>
         <nav>
           {!loggedin ? (
             <>
-              <NavLink to="/login">
+              <NavLink to='/login'>
                 <span>Log in</span>
               </NavLink>
-              <NavLink to="/signup">
+              <NavLink to='/signup'>
                 <span>Sign up</span>
               </NavLink>
             </>
           ) : (
             <>
-              <NavLink to="/equipmentupload">
+              <NavLink
+                to={{
+                  pathname: `/equipmentupload/${currentuser.id}`,
+                  state: { value: currentuser }
+                }}>
                 <span>Equipment Upload</span>
               </NavLink>
-              <NavLink to="/itemlist">
+              <NavLink to='/itemlist'>
                 <span>See items!</span>
               </NavLink>
               <NavLink
@@ -41,11 +46,10 @@ const Navbar = () => {
                   localStorage.removeItem("token") &
                   dispatch({ type: "LOGGED_STATUS", payload: false })
                 }
-                to="/"
-              >
+                to='/'>
                 <span>Log out</span>
               </NavLink>
-              <NavLink to="/profile">
+              <NavLink to='/profile'>
                 <span>Profile</span>
               </NavLink>
             </>

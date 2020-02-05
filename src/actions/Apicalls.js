@@ -17,11 +17,27 @@ export const Fetch = () => dispatch => {
         dispatch({ type: DATA_FAILURE, payload: err })
     );
 };
+export const Fetchusers = () => dispatch => {
+  dispatch({ type: DATA_START });
 
-export const Send = (friend, id) => dispatch => {
+  axiosWithAuth()
+    .get("/users")
+    .then(
+      res =>
+        console.log(res, "res data") &
+        dispatch({ type: DATA_SUCCESS, payload: res.data })
+    )
+    .catch(
+      err =>
+        console.log(err, "ERROR") &
+        dispatch({ type: DATA_FAILURE, payload: err })
+    );
+};
+
+export const Send = (url, data) => dispatch => {
   dispatch({ type: DATA_START });
   axiosWithAuth()
-    .post(`/api/`, friend)
+    .post(url, data)
     .then(res => {
       console.log(res, "Sent data");
       setTimeout(() => {
@@ -33,10 +49,10 @@ export const Send = (friend, id) => dispatch => {
     });
 };
 
-export const Edit = (friend, id) => dispatch => {
+export const Edit = (data, id) => dispatch => {
   dispatch({ type: DATA_START });
   axiosWithAuth()
-    .put(`/api//${id}`, friend)
+    .put(`/api/user/${id}`, data)
     .then(res => {
       console.log(res, "Deleted data");
       setTimeout(() => {

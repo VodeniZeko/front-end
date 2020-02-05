@@ -4,7 +4,7 @@ import axios from "axios";
 import { ProfileContainer } from "../styles/styles.js";
 import profile from "../assets/profile.svg";
 
-const Profile = () => {
+const Profile = props => {
   var check = "	\u2713";
   var noCheck = "	\u274C";
   const [user, setUser] = useState([]);
@@ -19,6 +19,10 @@ const Profile = () => {
         console.log(err);
       });
   }, []);
+
+  useEffect(() => {
+
+  }, [])
   console.log(user);
   return (
     <ProfileContainer>
@@ -39,6 +43,7 @@ const Profile = () => {
           style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
           Verified info
         </ListGroup.Item>
+        {console.log(props, "props")}
         <ListGroup.Item style={{ border: "none" }}>
           Name: {user.name} <span style={{ paddingLeft: "20px" }}>{check}</span>
         </ListGroup.Item>

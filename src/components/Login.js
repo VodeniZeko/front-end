@@ -6,8 +6,9 @@ import * as Yup from "yup";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Fetchusers } from "../actions/Apicalls.js";
 
-const Login = () => {
+const Login = props => {
   const { push } = useHistory();
   const dispatch = useDispatch();
   const handleSubmit = (values, { setStatus, resetForm }) => {
@@ -19,7 +20,9 @@ const Login = () => {
         console.log(res, `success`);
         localStorage.setItem("token", res.data.token);
         dispatch({ type: "LOGGED_STATUS", payload: true });
-        push("/profile");
+        dispatch({ type: "CURRENT_USER", payload: res.data.user });
+        dispatch(Fetchusers());
+        push(`/profile`);
       })
       .catch(err => console.log(err) & alert("Invalid email or Password"))
       .finally();
