@@ -51,7 +51,7 @@ const ItemList = () => {
       <Scroll>
         <ItemContainer>
           {filtered
-            .filter(item => item.availability !== 0)
+            // .filter(item => item.availability !== 0) // SHOWS ONLY AVAILABLE PRODUCTS
             .map(item => (
               <div class="container">
                 <div class="card u-clearfix">
