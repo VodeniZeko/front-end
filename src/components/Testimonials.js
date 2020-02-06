@@ -9,10 +9,8 @@ const Testimonials = () => {
           <li>
             <div>
               <p>
-                &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse aliquet mattis interd. Phasellus volutpat
-                pellentesque dui, sit amet commodo risus faucibus sit
-                amet.&rdquo;
+                &ldquo;After using shareable my business skyrocketed! . I will
+                recommend you to my colleagues.!&rdquo;
               </p>
               <span class="quote-arrow"></span>
             </div>
@@ -22,10 +20,8 @@ const Testimonials = () => {
           <li>
             <div>
               <p>
-                &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse aliquet mattis interd. Phasellus volutpat
-                pellentesque dui, sit amet commodo risus faucibus sit
-                amet.&rdquo;
+                &ldquo;Shareable should be nominated for service of the year.
+                Shareable is both attractive and highly adaptable. &rdquo;
               </p>
               <span class="quote-arrow"></span>
             </div>
@@ -35,10 +31,9 @@ const Testimonials = () => {
           <li>
             <div>
               <p>
-                &ldquo;Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse aliquet mattis interd. Phasellus volutpat
-                pellentesque dui, sit amet commodo risus faucibus sit
-                amet.&rdquo;
+                &ldquo;It's the perfect solution for our business. It's
+                incredible. It fits our needs perfectly. Wow what great service,
+                I love it.&rdquo;
               </p>
               <span class="quote-arrow"></span>
             </div>

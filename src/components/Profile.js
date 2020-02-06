@@ -160,7 +160,14 @@ const Profile = props => {
               <Stars />
               <p>No reviews yet</p>
               <span style={{ opacity: ".8" }}>
-                {currentuser.username} hasn't rented anything out yet
+                <span
+                  style={{
+                    fontWeight: "bolder"
+                  }}
+                >
+                  {currentuser.username}
+                </span>{" "}
+                hasn't rented anything out yet
               </span>
             </ListGroup.Item>
           ) : (

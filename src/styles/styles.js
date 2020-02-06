@@ -1268,7 +1268,8 @@ export const TestimonialContainer = styled.div`
     display: block;
     font-size: 1.125em;
     font-weight: 700;
-    padding-top: 3em;
+    padding-top: 4em;
+    padding-bottom: 1em;
     text-transform: uppercase;
     text-align: center;
   }
