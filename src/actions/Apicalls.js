@@ -40,24 +40,20 @@ export const Send = (url, data) => dispatch => {
     .post(url, data)
     .then(res => {
       console.log(res, "Sent data");
-      setTimeout(() => {
-        dispatch({ type: DATA_SUCCESS, payload: res.data });
-      }, 2500);
+      dispatch({ type: DATA_SUCCESS, payload: res.data });
     })
     .catch(err => {
       dispatch({ type: DATA_FAILURE, payload: err.response });
     });
 };
 
-export const Edit = (data, id) => dispatch => {
+export const Edit = (id, data) => dispatch => {
   dispatch({ type: DATA_START });
   axiosWithAuth()
-    .put(`/api/user/${id}`, data)
+    .put(`/item/${id}`, data)
     .then(res => {
       console.log(res, "Deleted data");
-      setTimeout(() => {
-        dispatch({ type: DATA_SUCCESS, payload: res.data });
-      }, 2500);
+      dispatch({ type: DATA_SUCCESS, payload: res.data });
     })
     .catch(err => {
       dispatch({ type: DATA_FAILURE, payload: err.response });
@@ -67,12 +63,11 @@ export const Edit = (data, id) => dispatch => {
 export const Delete = id => dispatch => {
   dispatch({ type: DATA_START });
   axiosWithAuth()
-    .delete(`/api/${id}`)
+    .delete(`/item/${id}`)
     .then(res => {
       console.log(res, "Deleted data");
-      setTimeout(() => {
-        dispatch({ type: DATA_SUCCESS, payload: res.data });
-      }, 2500);
+      dispatch({ type: DATA_SUCCESS });
+      dispatch(Fetch());
     })
     .catch(err => {
       dispatch({ type: DATA_FAILURE, payload: err.response });
