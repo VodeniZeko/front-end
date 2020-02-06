@@ -29,7 +29,6 @@ const Profile = props => {
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);
-
   return (
     <ProfileContainer>
       <div class="coverPhoto">
