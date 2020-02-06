@@ -19,14 +19,14 @@ const SingleItem = ({ match }) => {
   return (
     <SingleItemContainer>
       {products.map(el =>
-        el.id == Number(id) ? ( // so we need double equal not tripple or Number aaaaggrgrg
-          <div id="wrapper">
-            <div class="box">
-              <div class="main-container">
-                <div class="left-cl">
-                  <NavLink to="/itemlist">
-                    <div class="button-back">
-                      <span className="button-back-span">
+        el.id === Number(id) ? (
+          <div id='wrapper'>
+            <div class='box'>
+              <div class='main-container'>
+                <div class='left-cl'>
+                  <NavLink to='/itemlist'>
+                    <div class='button-back'>
+                      <span className='button-back-span'>
                         <svg
                           width="26px"
                           height="26px"
