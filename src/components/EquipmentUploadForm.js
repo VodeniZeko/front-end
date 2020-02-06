@@ -199,6 +199,7 @@ const EquipmentUploadForm = props => {
                   placeholder='Price per Hr'
                   onChange={priceChange}
                 /> */}
+
               <Input
                 type='number'
                 name='daily_rate'

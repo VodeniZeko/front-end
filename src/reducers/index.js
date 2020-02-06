@@ -4,7 +4,7 @@ export const DATA_FAILURE = "DATA_FAILURE";
 export const FORM_CHANGE = "FORM_CHANGE";
 export const RESET_FORM = "RESET_FORM";
 export const EDIT_CHANGE = "EDIT_CHANGE";
-const uuidv4 = require("uuid/v4");
+// const uuidv4 = require("uuid/v4");
 
 const setid = window.localStorage.getItem("CURRENTUSER");
 
@@ -15,7 +15,7 @@ const initialState = {
     // id: "",
     item_name: "",
     description: "",
-    availability: "",
+    availability: 1,
     daily_rate: "",
     condition: "",
     location: "",

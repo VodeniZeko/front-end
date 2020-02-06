@@ -10,5 +10,5 @@ export default Scroll;
 const Scrol = styled.div`
   overflow-y: scroll;
   border: 1em transparent;
-  height: 60vh;
+  height: 65vh;
 `;

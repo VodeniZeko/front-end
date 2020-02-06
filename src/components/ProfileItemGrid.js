@@ -30,14 +30,14 @@ const ProfileItemGrid = () => {
       )}
 
       {items && !loading && (
-        <>
+        <div style={{ height: "80vh" }}>
           {items
             .filter(stuff => stuff.user_id === currentuser.id)
 
             .map(item => (
               <ProfileItems item={item} />
             ))}
-        </>
+        </div>
       )}
     </div>
   );

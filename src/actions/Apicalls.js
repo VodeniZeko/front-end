@@ -54,6 +54,7 @@ export const Edit = (id, data) => dispatch => {
     .then(res => {
       console.log(res, "Deleted data");
       dispatch({ type: DATA_SUCCESS, payload: res.data });
+      dispatch(Fetch());
     })
     .catch(err => {
       dispatch({ type: DATA_FAILURE, payload: err.response });

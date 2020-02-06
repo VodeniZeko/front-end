@@ -99,7 +99,6 @@ const Login = props => {
                   {errors.password}
                 </span>
               )}
-              <br />
               <button className='loginButton' type='submit'>
                 Login
               </button>
