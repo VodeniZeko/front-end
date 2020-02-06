@@ -16,7 +16,11 @@ const SignUp = () => {
         console.log(res, `success`);
         push("/login");
       })
-      .catch(err => console.log(err))
+      .catch(
+        err =>
+          console.log(err) &
+          alert("Username already exist please choose a different name")
+      )
       .finally();
   };
   return (
@@ -34,8 +38,7 @@ const SignUp = () => {
             .required("No password provided.")
             .min(6, "Password is too short - should be 6 chars minimum.")
             .matches(/(?=.*[0-9])/, "Password must contain a number.")
-        })}
-      >
+        })}>
         {props => {
           const {
             values,
@@ -48,14 +51,14 @@ const SignUp = () => {
           } = props;
           return (
             <form onSubmit={handleSubmit}>
-              <label className="signupLabel" htmlFor="text">
+              <label className='signupLabel' htmlFor='text'>
                 username
               </label>
               <Field
-                className="signupInput"
-                name="username"
-                type="text"
-                placeholder="Enter your username"
+                className='signupInput'
+                name='username'
+                type='text'
+                placeholder='Enter your username'
                 value={values.username}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -63,8 +66,7 @@ const SignUp = () => {
               {errors.username && touched.username && (
                 <span
                   style={{ position: "absolute", top: "70px", left: "70px" }}
-                  className="input-feedback"
-                >
+                  className='input-feedback'>
                   {errors.username}
                 </span>
               )}
@@ -83,15 +85,15 @@ const SignUp = () => {
             {errors.email && touched.email && (
               <div className='input-feedback'>{errors.email}</div>
             )} */}
-              <label className="signupLabel" htmlFor="email">
+              <label className='signupLabel' htmlFor='email'>
                 Password
               </label>
               {console.log(values, "value")}
               <Field
-                className="signupInput"
-                name="password"
-                type="password"
-                placeholder="Enter your password"
+                className='signupInput'
+                name='password'
+                type='password'
+                placeholder='Enter your password'
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -105,23 +107,21 @@ const SignUp = () => {
                     maxWidth: "1000px",
                     width: "500px"
                   }}
-                  className="input-feedback"
-                >
+                  className='input-feedback'>
                   {errors.password}
                 </span>
               )}
 
               <Field
                 required
-                as="select"
-                name="department"
-                placeholder="select"
-              >
-                <option value="" disabled defaultValue>
+                as='select'
+                name='department'
+                placeholder='select'>
+                <option value='' disabled defaultValue>
                   Select a Role
                 </option>
-                <option value="renter">Equipment Renter</option>
-                <option value="owner">Equipment Owner</option>
+                <option value='renter'>Equipment Renter</option>
+                <option value='owner'>Equipment Owner</option>
               </Field>
 
               {/* <label className='checkbox-container'>I am:</label>
@@ -140,7 +140,7 @@ const SignUp = () => {
               name='department'
               checked={EventTarget.checked}
             /> */}
-              <button className="signupButton" type="submit">
+              <button className='signupButton' type='submit'>
                 Sign up
               </button>
             </form>

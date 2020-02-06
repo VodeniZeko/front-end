@@ -10,6 +10,7 @@ const setid = window.localStorage.getItem("CURRENTUSER");
 
 const initialState = {
   currentuser: JSON.parse(setid) ?? { id: 3 },
+  users: [],
   loggedin: false,
   item: {
     // id: "",
@@ -37,7 +38,8 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isloading: false,
-        data: action.payload
+        data: action.payload,
+        users: action.users
       };
     case DATA_FAILURE:
       return {
