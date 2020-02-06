@@ -49,6 +49,9 @@ export const NavbarContainer = styled.div`
     display: flex;
     flex-direction: row-reverse;
     background: black;
+    @media screen and (min-width: 800px) {
+      margin-right: 10px;
+    }
   }
   nav {
     right: 0;
@@ -569,9 +572,11 @@ export const FooterContainer = styled.div`
     padding: 5px 15px 6px 15px;
     border: solid #25658a 1px;
     text-decoration: none;
-    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
-    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+  }
+  button {
+    background:transparent;
+    color:#fff;
+    border:none;
   }
   footer .content {
     max-width: 1000px;

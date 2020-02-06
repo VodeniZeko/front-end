@@ -10,120 +10,118 @@ export default function() {
       <footer>
         <div class="content">
           <div id="emailsignup">
-            <a href="#" class="footer-logo">
-              Shareable
-            </a>
+            <button class="footer-logo">Shareable</button>
             <p>
               Stay in the know. Receive our weekly newsletter and stay on top of
               what's available on Shareable.
               <br style={{ margin: "0 0 12px 0" }} />
-              <a href="#">View this week's newsletter</a>
+              <button>View this week's newsletter</button>
             </p>
             <p>
-              <a href="#" class="btn" style={{ display: "inline-block" }}>
+              <button class="btn" style={{ display: "inline-block" }}>
                 Sign up for our newsletter
-              </a>
+              </button>
             </p>
           </div>
           <div id="helpfullinks">
             <div>
               <p class="category">
-                <a href="#">About us</a>
+                <button>About us</button>
               </p>
               <ul>
                 <li>
-                  <a href="#">Help</a>
+                  <button>Help</button>
                 </li>
                 <li>
-                  <a href="#">Contact us</a>
+                  <button>Contact us</button>
                 </li>
                 <li>
-                  <a href="#">Leadership</a>
+                  <button>Leadership</button>
                 </li>
                 <li>
-                  <a href="#">Careers</a>
+                  <button>Careers</button>
                 </li>
                 <li>
-                  <a href="#">Newsroom</a>
+                  <button>Newsroom</button>
                 </li>
                 <li>
-                  <a href="#">Advertise with us</a>
+                  <a>Advertise with us</a>
                 </li>
                 <li>
-                  <a href="#">User agreement</a>
+                  <button>User agreement</button>
                 </li>
                 <li>
-                  <a href="#">Privacy policy</a>
+                  <button>Privacy policy</button>
                 </li>
                 <li>
-                  <a href="#">Shareable USA</a>
+                  <button>Shareable USA</button>
                 </li>
               </ul>
             </div>
             <div>
               <p class="category">
-                <a href="#">Need Tech</a>
+                <button>Need Tech</button>
               </p>
               <ul>
                 <li>
                   {!loggedin ? (
                     <NavLink to="/signup">
                       {" "}
-                      <a href="#">Creating account</a>
+                      <a>Creating account</a>
                     </NavLink>
                   ) : null}
                 </li>
                 <li>
-                  <a href="#">Searching</a>
+                  <button>Searching</button>
                 </li>
                 <li>
-                  <a href="#">Using audio/video</a>
+                  <button>Using audio/video</button>
                 </li>
                 <li>
-                  <a href="#">Renting</a>
+                  <button>Renting</button>
                 </li>
                 <li>
-                  <a href="#">Tracking</a>
+                  <button>Tracking</button>
                 </li>
                 <li>
-                  <a href="#">Giving feedback</a>
+                  <button>Giving feedback</button>
                 </li>
                 <li>
-                  <a href="#">Renting resources</a>
+                  <button>Renting resources</button>
                 </li>
               </ul>
             </div>
             <div class="last">
               <p class="category">
-                <a href="#">Have Tech</a>
+                <button>Have Tech</button>
               </p>
 
               {!loggedin ? (
-                <a href="#" class="btn">
+                <button class="btn">
                   <NavLink to="/login">Renter login</NavLink>
-                </a>
+                </button>
               ) : null}
               <ul>
                 <li>
-                  <a href="#">Apply to rent</a>
+                  <button>Apply to rent</button>
                 </li>
                 <li>
-                  <a href="#">Rent Now</a>
+                  <button>Rent Now</button>
                 </li>
                 <li>
-                  <a href="#">Auction</a>
+                  <button>Auction</button>
                 </li>
                 <li>
-                  <a href="#">Storefronts</a>
+                  <button>Storefronts</button>
                 </li>
                 <li>
-                  <a href="#">Security</a>
+                  <button>Security</button>
                 </li>
                 <li>
-                  <a href="#">Services</a>
+                  <button>Services</button>
                 </li>
                 <li>
-                  <a href="#">Renting resources</a>
+                  <button>Renting resources</button>
                 </li>
               </ul>
             </div>
@@ -134,19 +132,13 @@ export default function() {
             <p>Powered by Lambda Students</p>
             <ul>
               <li>
-                <a href="#" class="footer-divvy">
-                  Divvy
-                </a>
+                <button class="footer-divvy">Divvy</button>
               </li>
               <li>
-                <a href="#" class="footer-finest">
-                  The Finest
-                </a>
+                <button class="footer-finest">The Finest</button>
               </li>
               <li class="last">
-                <a href="#" class="footer-apn">
-                  APN
-                </a>
+                <button class="footer-apn">APN</button>
               </li>
             </ul>
           </div>
@@ -154,16 +146,16 @@ export default function() {
           <div id="social">
             <ul class="social">
               <li>
-                <a href="#">Facebook</a>
+                <button>Facebook</button>
               </li>
               <li>
-                <a href="#">Twitter</a>
+                <button>Twitter</button>
               </li>
               <li>
-                <a href="#">YouTube</a>
+                <button>YouTube</button>
               </li>
               <li class="last">
-                <a href="#">LinkedIn</a>
+                <button>LinkedIn</button>
               </li>
             </ul>
             <div class="clear"></div>
