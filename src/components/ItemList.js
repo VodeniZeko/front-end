@@ -50,7 +50,7 @@ const ItemList = () => {
       />
       <Scroll>
         <ItemContainer>
-          {items
+          {filtered
             // .filter(item => item.availability !== 0) // SHOWS ONLY AVAILABLE PRODUCTS
             .map(item => (
               <div class='container'>
