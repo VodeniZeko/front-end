@@ -20,7 +20,7 @@ const ItemList = () => {
       return x.item_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
     });
     setItems(filtered);
-  }, [search]);
+  }, [search, products]);
 
   const filtered = products.filter(x => {
     return (

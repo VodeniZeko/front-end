@@ -16,7 +16,11 @@ const SignUp = () => {
         console.log(res, `success`);
         push("/login");
       })
-      .catch(err => console.log(err))
+      .catch(
+        err =>
+          console.log(err) &
+          alert("Username already exist please choose a different name")
+      )
       .finally();
   };
   return (
@@ -41,7 +45,7 @@ const SignUp = () => {
             values,
             touched,
             errors,
-            isSubmitting,
+            // isSubmitting,
             handleChange,
             handleBlur,
             handleSubmit

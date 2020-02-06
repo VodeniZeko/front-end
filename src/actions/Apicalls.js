@@ -25,7 +25,7 @@ export const Fetchusers = () => dispatch => {
     .then(
       res =>
         console.log(res, "res data") &
-        dispatch({ type: DATA_SUCCESS, payload: res.data })
+        dispatch({ type: DATA_SUCCESS, users: res.data })
     )
     .catch(
       err =>

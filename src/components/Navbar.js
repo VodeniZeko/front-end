@@ -59,8 +59,10 @@ const Navbar = props => {
               </NavLink>
               <NavLink
                 onClick={() =>
-                  localStorage.removeItem("token") &
-                  localStorage.removeItem("CURRENTUSER") &
+                  // localStorage.removeItem("token") &
+                  // localStorage.removeItem("CURRENTUSER") &
+                  localStorage.clear() &
+                  sessionStorage.clear() &
                   dispatch({ type: "LOGGED_STATUS", payload: false })
                 }
                 to='/'>

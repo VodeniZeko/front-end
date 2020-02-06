@@ -96,7 +96,7 @@ const MainPage = () => {
               <div className='content-left-container'>
                 <div className='content-left'>
                   <p>
-                    Sit back and wait for earning to start, get payed by direct
+                    Sit back and wait for earning to start, get paid by direct
                     deposit or paypal, with peace of mind knowing that we got
                     you covered and insured!
                     <span className='article-number'>03</span>
@@ -109,7 +109,7 @@ const MainPage = () => {
               </div>
             </div>
           </div>
-          <div className='timeline-end'>Get payed</div>
+          <div className='timeline-end'>Get paid </div>
         </section>
       </div>
 
