@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/uploadForm.scss";
-import useUpload from "../hooks/useUpload";
+// import useUpload from "../hooks/useUpload";
 import {
-  Modal,
-  Button,
-  ModalBody,
-  ModalHeader,
+  // Modal,
+  // Button,
+  // ModalBody,
+  // ModalHeader,
   Form,
   Label,
   Input,
   FormGroup,
-  Card,
-  CardTitle,
+  // Card,
+  // CardTitle,
   Textarea
 } from "@bootstrap-styled/v4";
 import { useDispatch, useSelector } from "react-redux";
 import { FORM_CHANGE, RESET_FORM } from "../reducers";
 import { Send } from "../actions/Apicalls";
-import Loader from "react-loader-spinner";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 // import ButtonGroup from "@bootstrap-styled/v4/lib/ButtonGroup";
 
 // const UploadInput = props => (
@@ -46,7 +45,6 @@ const EquipmentUploadForm = props => {
 
   const { push } = useHistory();
 
-  const [modal, setModal] = useState(true);
   const dispatch = useDispatch();
   const item = useSelector(state => state.item);
   const currentuser = useSelector(state => state.currentuser);

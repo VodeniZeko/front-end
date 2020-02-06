@@ -8,9 +8,9 @@ export default function() {
   return (
     <FooterContainer>
       <footer>
-        <div class="content">
-          <div id="emailsignup">
-            <button class="footer-logo">Shareable</button>
+        <div class='content'>
+          <div id='emailsignup'>
+            <button class='footer-logo'>Shareable</button>
             <p>
               Stay in the know. Receive our weekly newsletter and stay on top of
               what's available on Shareable.
@@ -18,14 +18,14 @@ export default function() {
               <button>View this week's newsletter</button>
             </p>
             <p>
-              <button class="btn" style={{ display: "inline-block" }}>
+              <button class='btn' style={{ display: "inline-block" }}>
                 Sign up for our newsletter
               </button>
             </p>
           </div>
-          <div id="helpfullinks">
+          <div id='helpfullinks'>
             <div>
-              <p class="category">
+              <p class='category'>
                 <button>About us</button>
               </p>
               <ul>
@@ -45,7 +45,9 @@ export default function() {
                   <button>Newsroom</button>
                 </li>
                 <li>
-                  <a>Advertise with us</a>
+                  <a href='https://res.cloudinary.com/practicaldev/image/fetch/s--D6Yu-tC5--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://thepracticaldev.s3.amazonaws.com/uploads/user/profile_image/268632/f66b98b4-a11b-4a32-9bf7-f38058ea602b.jpg'>
+                    Advertise with us
+                  </a>
                 </li>
                 <li>
                   <button>User agreement</button>
@@ -59,15 +61,15 @@ export default function() {
               </ul>
             </div>
             <div>
-              <p class="category">
+              <p class='category'>
                 <button>Need Tech</button>
               </p>
               <ul>
                 <li>
                   {!loggedin ? (
-                    <NavLink to="/signup">
+                    <NavLink to='/signup'>
                       {" "}
-                      <a>Creating account</a>
+                      <span>Creating account</span>
                     </NavLink>
                   ) : null}
                 </li>
@@ -91,14 +93,14 @@ export default function() {
                 </li>
               </ul>
             </div>
-            <div class="last">
-              <p class="category">
+            <div class='last'>
+              <p class='category'>
                 <button>Have Tech</button>
               </p>
 
               {!loggedin ? (
-                <button class="btn">
-                  <NavLink to="/login">Renter login</NavLink>
+                <button class='btn'>
+                  <NavLink to='/login'>Renter login</NavLink>
                 </button>
               ) : null}
               <ul>
@@ -125,26 +127,26 @@ export default function() {
                 </li>
               </ul>
             </div>
-            <div class="clear"></div>
+            <div class='clear'></div>
           </div>
-          <div class="clear"></div>
-          <div id="poweredby">
+          <div class='clear'></div>
+          <div id='poweredby'>
             <p>Powered by Lambda Students</p>
             <ul>
               <li>
-                <button class="footer-divvy">Divvy</button>
+                <button class='footer-divvy'>Divvy</button>
               </li>
               <li>
-                <button class="footer-finest">The Finest</button>
+                <button class='footer-finest'>The Finest</button>
               </li>
-              <li class="last">
-                <button class="footer-apn">APN</button>
+              <li class='last'>
+                <button class='footer-apn'>APN</button>
               </li>
             </ul>
           </div>
-          <div class="clear"></div>
-          <div id="social">
-            <ul class="social">
+          <div class='clear'></div>
+          <div id='social'>
+            <ul class='social'>
               <li>
                 <button>Facebook</button>
               </li>
@@ -154,24 +156,23 @@ export default function() {
               <li>
                 <button>YouTube</button>
               </li>
-              <li class="last">
+              <li class='last'>
                 <button>LinkedIn</button>
               </li>
             </ul>
-            <div class="clear"></div>
-            <ul class="contact">
-              <li class="last">&copy;2020 Shareable, Inc.</li>
+            <div class='clear'></div>
+            <ul class='contact'>
+              <li class='last'>&copy;2020 Shareable, Inc.</li>
             </ul>
           </div>
           <iframe
-            id="footerSealiFrame"
-            title="myframe"
-            src="https://www.proxibid.com/include/incFooterSeals.asp"
-            allowtransparency="true"
-            frameBorder="0"
-            scrolling="no"
-            seamless="seamless"
-          ></iframe>
+            id='footerSealiFrame'
+            title='myframe'
+            src='https://www.proxibid.com/include/incFooterSeals.asp'
+            allowtransparency='true'
+            frameBorder='0'
+            scrolling='no'
+            seamless='seamless'></iframe>
         </div>
       </footer>
     </FooterContainer>

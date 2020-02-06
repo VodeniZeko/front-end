@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { ListGroup, ListGroupItem } from "react-bootstrap";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { ListGroup } from "react-bootstrap";
 import { ProfileContainer } from "../styles/styles.js";
 import Stars from "./stars";
 import profile from "../assets/profile.svg";
@@ -44,7 +43,7 @@ const Profile = props => {
           style={{ top: "480px" }}
           id='icon'
           src='http://www.hailatara.md/images/no_avatar-xlarge.jpg'
-          alt='user image'
+          alt=''
         />
       </div>
       <div
@@ -128,20 +127,42 @@ const Profile = props => {
             height: "50vh",
             border: "none"
           }}>
-          <ListGroup.Item
-            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
-            Reviews from Owners{a}
-          </ListGroup.Item>
+          {currentuser.department === "owner" ? (
+            <ListGroup.Item
+              style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+              Reviews from Renters{a}
+            </ListGroup.Item>
+          ) : (
+            <ListGroup.Item
+              style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+              Reviews from Owners{a}
+            </ListGroup.Item>
+          )}
+
           <ListGroup.Item style={{ border: "none" }}>
-            <img src='https://thumbs.dreamstime.com/t/creative-vector-illustration-default-avatar-profile-placeholder-isolated-background-art-design-grey-photo-blank-template-mo-118823351.jpg' />
+            <img
+              src='https://thumbs.dreamstime.com/t/creative-vector-illustration-default-avatar-profile-placeholder-isolated-background-art-design-grey-photo-blank-template-mo-118823351.jpg'
+              alt=''
+            />
           </ListGroup.Item>
-          <ListGroup.Item style={{ border: "none" }}>
-            <Stars />
-            <p>No reviews yet</p>
-            <span style={{ opacity: ".8" }}>
-              unsername hasn't rented anything yet
-            </span>
-          </ListGroup.Item>
+
+          {currentuser.department === "owner" ? (
+            <ListGroup.Item style={{ border: "none" }}>
+              <Stars />
+              <p>No reviews yet</p>
+              <span style={{ opacity: ".8" }}>
+                {currentuser.username} hasn't rented anything out yet
+              </span>
+            </ListGroup.Item>
+          ) : (
+            <ListGroup.Item style={{ border: "none" }}>
+              <Stars />
+              <p>No reviews yet</p>
+              <span style={{ opacity: ".8" }}>
+                {currentuser.username} hasn't rented anything yet
+              </span>
+            </ListGroup.Item>
+          )}
         </ListGroup>
       </div>
     </ProfileContainer>

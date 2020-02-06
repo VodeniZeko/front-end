@@ -20,7 +20,7 @@ const ItemList = () => {
       return x.item_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
     });
     setItems(filtered);
-  }, [search]);
+  }, [search, products]);
 
   const filtered = products.filter(x => {
     return (
@@ -36,6 +36,7 @@ const ItemList = () => {
     }, 4000);
   };
 
+
   const handleInput = e => {
     setSearch(e.target.value);
   };
@@ -50,7 +51,7 @@ const ItemList = () => {
       />
       <Scroll>
         <ItemContainer>
-          {filtered
+          {items
             .filter(item => item.availability !== 0)
             .map(item => (
               <div class="container">
