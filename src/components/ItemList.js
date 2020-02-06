@@ -36,7 +36,6 @@ const ItemList = () => {
     }, 4000);
   };
 
-
   const handleInput = e => {
     setSearch(e.target.value);
   };
@@ -51,8 +50,8 @@ const ItemList = () => {
       />
       <Scroll>
         <ItemContainer>
-          {items
-            .filter(item => item.availability !== 0)
+          {filtered
+            // .filter(item => item.availability !== 0) // SHOWS ONLY AVAILABLE PRODUCTS
             .map(item => (
               <div class="container">
                 <div class="card u-clearfix">

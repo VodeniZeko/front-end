@@ -41,7 +41,8 @@ const Login = props => {
             .required("No password provided.")
             .min(6, "Password is too short - should be 6 chars minimum.")
             .matches(/(?=.*[0-9])/, "Password must contain a number.")
-        })}>
+        })}
+      >
         {props => {
           const {
             values,
@@ -54,14 +55,12 @@ const Login = props => {
           } = props;
           return (
             <form onSubmit={handleSubmit}>
-              <label className='loginLabel' htmlFor='username'>
-                username
-              </label>
+              <label className="loginLabel" htmlFor="username"></label>
               <input
-                className='loginInput'
-                name='username'
-                type='text'
-                placeholder='Enter your username'
+                className="loginInput"
+                name="username"
+                type="text"
+                placeholder="Enter your username"
                 value={values.username}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -70,18 +69,17 @@ const Login = props => {
               {errors.username && touched.username && (
                 <span
                   style={{ position: "absolute", top: "70px", left: "70px" }}
-                  className='input-feedback'>
+                  className="input-feedback"
+                >
                   {errors.username}
                 </span>
               )}
-              <label className='loginLabel' htmlFor='username'>
-                Password
-              </label>
+              <label className="loginLabel" htmlFor="username"></label>
               <input
-                className='loginInput'
-                name='password'
-                type='password'
-                placeholder='Enter your password'
+                className="loginInput"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -95,11 +93,12 @@ const Login = props => {
                     maxWidth: "1000px",
                     width: "500px"
                   }}
-                  className='input-feedback'>
+                  className="input-feedback"
+                >
                   {errors.password}
                 </span>
               )}
-              <button className='loginButton' type='submit'>
+              <button className="loginButton" type="submit">
                 Login
               </button>
             </form>
