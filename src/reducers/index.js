@@ -9,7 +9,11 @@ const uuidv4 = require("uuid/v4");
 const setid = window.localStorage.getItem("CURRENTUSER");
 
 const initialState = {
-  currentuser: JSON.parse(setid),
+
+  currentuser: JSON.parse(setid) ?? { id: 3 },
+
+//   currentuser: JSON.parse(setid),
+
   loggedin: false,
   item: {
     // id: uuidv4(),
