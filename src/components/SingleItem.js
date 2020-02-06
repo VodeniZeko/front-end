@@ -81,8 +81,12 @@ const SingleItem = ({ match }) => {
 
                   <p className="availabilityNumber">
                     Availability:{" "}
-                    <span style={{ color: "green", fontSize: "1.5em" }}>
-                      {el.availability > 0 ? `Yes${smile}` : `${sad}`}
+                    <span style={{ fontSize: "1.5em" }}>
+                      {el.availability > 0 ? (
+                        <span style={{ color: "green" }}>Yes {smile}</span>
+                      ) : (
+                        <span style={{ color: "red" }}>{sad}</span>
+                      )}
                     </span>
                   </p>
 

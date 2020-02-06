@@ -8,7 +8,9 @@ export const NavbarContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  min-width: 500px;
+  margin: 0;
+  padding: 0;
+
   background: black;
   .logo {
     color: white;
@@ -20,6 +22,9 @@ export const NavbarContainer = styled.div`
   .logo p {
     margin-top: 20px;
     align-self: center;
+    @media screen and (max-width: 611px) {
+      display: none;
+    }
   }
 
   .listedItems {
@@ -33,6 +38,10 @@ export const NavbarContainer = styled.div`
     background: white;
     margin: 1em;
     border-radius: 3em;
+    @media screen and (max-width: 400px) {
+      width: 30px;
+      height: 30px;
+    }
   }
   .nav-bar {
     position: relative;
@@ -44,7 +53,6 @@ export const NavbarContainer = styled.div`
   nav {
     right: 0;
     left: 0;
-    /* width: 400px; */
     align-self: center;
     transform: translateY(-50%);
   }
@@ -58,6 +66,15 @@ export const NavbarContainer = styled.div`
     font-weight: bold;
     padding: 15px 16px;
     transition: 0.2s ease color;
+    @media (max-width: 800px) {
+      font-size: 1rem;
+    }
+  }
+  .loggedSpan {
+    @media (max-width: 500px) {
+      font-size: 0.3rem;
+      margin: 0px 0px 0px -25px;
+    }
   }
 
   nav span:before,
@@ -190,17 +207,18 @@ export const MainPageContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  min-width: 400px;
-
   .headerContainer {
     text-align: center;
     display: flex;
     margin: 5em;
     flex-direction: column;
     justify-content: center;
-    height: 45vh;
-    @media (max-width: 800px) {
-      height: 45vh;
+    height: 50vh;
+    @media (max-width: 500px) {
+      height: 55vh;
+    }
+    @media (max-width: 400px) {
+      height: 65vh;
     }
   }
 
@@ -210,6 +228,9 @@ export const MainPageContainer = styled.div`
     margin: 0.2em;
     @media (max-width: 800px) {
       font-size: 5rem;
+    }
+    @media (max-width: 500px) {
+      font-size: 4rem;
     }
   }
   .headerContainer > h2 {
@@ -236,11 +257,14 @@ export const MainPageContainer = styled.div`
     width: 15%;
     align-self: center;
     margin: 2em;
-    @media (min-width: 1000px) {
+    @media (min-width: 1150px) {
       width: 10%;
     }
     @media (max-width: 800px) {
       width: 30%;
+    }
+    @media (max-width: 500px) {
+      width: 40%;
     }
   }
 
@@ -442,6 +466,11 @@ export const ProfileContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  .listContainer {
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+    }
+  }
 
   .coverPhoto {
     width: 100%;
@@ -458,12 +487,15 @@ export const ProfileContainer = styled.div`
   #cover {
     width: 100%;
     height: 350px;
+    @media only screen and (max-width: 500px) {
+      height: 269px;
+    }
   }
 
   #icon {
     height: 13em;
     width: 13em;
-    border: solid #fff 6px;
+    border: solid #3e87d5 6px;
     margin: -69px 0px 0px 70px;
     border-radius: 100%;
   }
@@ -545,10 +577,17 @@ export const FooterContainer = styled.div`
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
+    @media screen and (max-width: 400px) {
+      display: flex;
+    flex-direction: column;
+    margin: 0 25px;
+}
   }
   @media screen and (max-width: 768px) {
     footer .content {
-      padding: 0 10px;
+      
+    }
+
     }
   }
   footer .last {
@@ -838,6 +877,9 @@ export const ItemContainer = styled.div`
   .container {
     margin: 50px auto;
     width: 560px;
+    @media screen and (max-width: 500px) {
+      width: 100%;
+    }
   }
 
   .card {
@@ -875,6 +917,9 @@ export const ItemContainer = styled.div`
     left: 82px;
     text-transform: uppercase;
     top: 192px;
+    @media screen and (max-width: 500px) {
+      position: unset;
+    }
   }
 
   .card-media-tag-orange {
@@ -901,6 +946,9 @@ export const ItemContainer = styled.div`
 
   .card-body-options {
     float: right;
+    @media screen and (max-width: 500px) {
+      float: none;
+    }
   }
 
   .card-body-option {
