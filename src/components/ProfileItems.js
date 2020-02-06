@@ -14,7 +14,7 @@ import {
   ModalFooter
 } from "@bootstrap-styled/v4";
 import Alert from "@bootstrap-styled/v4/lib/Alert";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Delete } from "../actions/Apicalls";
 import { Link } from "react-router-dom";
 import { EDIT_CHANGE } from "../reducers";
@@ -22,9 +22,9 @@ import { EDIT_CHANGE } from "../reducers";
 const ProfileItems = props => {
   const dispatch = useDispatch();
   const classes = useStyles();
-  const currentuser = useSelector(state => state.currentuser);
+  // const currentuser = useSelector(state => state.currentuser);
   const [modal, setModal] = useState(false);
-  const items = useSelector(state => state.data);
+  // const items = useSelector(state => state.data);
   //FIX THIS THING WHEN YOU CAN
   const toggle = () => setModal(!modal);
 

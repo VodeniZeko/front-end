@@ -44,7 +44,7 @@ const SignUp = () => {
             values,
             touched,
             errors,
-            isSubmitting,
+            // isSubmitting,
             handleChange,
             handleBlur,
             handleSubmit

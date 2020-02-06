@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/uploadForm.scss";
-import useUpload from "../hooks/useUpload";
+// import useUpload from "../hooks/useUpload";
 import {
-  Modal,
-  Button,
-  ModalBody,
-  ModalHeader,
+  // Modal,
+  // Button,
+  // ModalBody,
+  // ModalHeader,
   Form,
   Label,
   Input,
   FormGroup,
-  Card,
-  CardTitle,
+  // Card,
+  // CardTitle,
   Textarea
 } from "@bootstrap-styled/v4";
 import { useDispatch, useSelector } from "react-redux";
 import { FORM_CHANGE, RESET_FORM } from "../reducers";
-import { Send, Edit } from "../actions/Apicalls";
-import Loader from "react-loader-spinner";
-import { useHistory, useParams, useRouteMatch } from "react-router-dom";
+import { Edit } from "../actions/Apicalls";
+import { useHistory, useRouteMatch } from "react-router-dom";
 // import ButtonGroup from "@bootstrap-styled/v4/lib/ButtonGroup";
 
 // const UploadInput = props => (
@@ -47,10 +46,8 @@ const EditEquipmentForm = props => {
   const { push } = useHistory();
   const { params } = useRouteMatch();
 
-  const [modal, setModal] = useState(true);
   const dispatch = useDispatch();
   const item = useSelector(state => state.item);
-  const currentuser = useSelector(state => state.currentuser);
   // const price = useSelector(state => state.item.rentalPrice);
   // const [radiobutton, setRadiobutton] = useState(false);
 
@@ -76,7 +73,7 @@ const EditEquipmentForm = props => {
   // };
   console.log(props, "p");
   return (
-    <div className="container">
+    <div className='container'>
       {/* ------- FILES UPLOADED MSG ------ */}
       <h1>Edit Product Upload</h1>
       {console.log(params.id, "props")}
@@ -133,17 +130,17 @@ const EditEquipmentForm = props => {
           />
         ) : null}
       </form> */}
-      <div className="UploadForm">
+      <div className='UploadForm'>
         <Form onSubmit={handlesubmit}>
           <FormGroup>
             <Label>
               <p> Image URL </p>
               <Input
                 required
-                type="text"
-                name="imgs"
+                type='text'
+                name='imgs'
                 value={item.imgs}
-                placeholder="Image Location"
+                placeholder='Image Location'
                 onChange={handlechange}
               />
             </Label>
@@ -151,41 +148,41 @@ const EditEquipmentForm = props => {
               <p> Name of Product </p>
               <Input
                 required
-                type="text"
-                name="item_name"
+                type='text'
+                name='item_name'
                 value={item.item_name}
-                placeholder=" Product Name"
+                placeholder=' Product Name'
                 onChange={handlechange}
               />
             </Label>
             <Label>
               <p> Description of Product </p>
               <Textarea
-                type="text"
-                name="description"
+                type='text'
+                name='description'
                 value={item.description}
-                placeholder=" The quality of a product description can make or break a sale  "
+                placeholder=' The quality of a product description can make or break a sale  '
                 onChange={handlechange}
               />
             </Label>
             <Label>
               <p> Product Condition </p>
               <Input
-                className="condition"
-                type="text"
-                name="condition"
+                className='condition'
+                type='text'
+                name='condition'
                 value={item.condition}
-                placeholder="Like New/ Good / Fair etc.."
+                placeholder='Like New/ Good / Fair etc..'
                 onChange={handlechange}
               />
             </Label>
             <Label>
               <p> Product Location </p>
               <Input
-                type="text"
-                name="location"
+                type='text'
+                name='location'
                 value={item.location}
-                placeholder="City/State"
+                placeholder='City/State'
                 onChange={handlechange}
               />
             </Label>
@@ -202,10 +199,10 @@ const EditEquipmentForm = props => {
                   onChange={priceChange}
                 /> */}
               <Input
-                type="number"
-                name="daily_rate"
+                type='number'
+                name='daily_rate'
                 value={item.daily_rate}
-                placeholder="Price per Day"
+                placeholder='Price per Day'
                 onChange={handlechange}
               />
             </Label>
@@ -227,7 +224,7 @@ const EditEquipmentForm = props => {
             </ButtonGroup> */}
 
             <div>
-              <button className="btn22" type="submit">
+              <button className='btn22' type='submit'>
                 Submit
               </button>
             </div>
