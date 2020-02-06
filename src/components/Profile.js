@@ -128,20 +128,39 @@ const Profile = props => {
             height: "50vh",
             border: "none"
           }}>
-          <ListGroup.Item
-            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
-            Reviews from Owners{a}
-          </ListGroup.Item>
+          {currentuser.department === "owner" ? (
+            <ListGroup.Item
+              style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+              Reviews from Renters{a}
+            </ListGroup.Item>
+          ) : (
+            <ListGroup.Item
+              style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+              Reviews from Owners{a}
+            </ListGroup.Item>
+          )}
+
           <ListGroup.Item style={{ border: "none" }}>
             <img src='https://thumbs.dreamstime.com/t/creative-vector-illustration-default-avatar-profile-placeholder-isolated-background-art-design-grey-photo-blank-template-mo-118823351.jpg' />
           </ListGroup.Item>
-          <ListGroup.Item style={{ border: "none" }}>
-            <Stars />
-            <p>No reviews yet</p>
-            <span style={{ opacity: ".8" }}>
-              unsername hasn't rented anything yet
-            </span>
-          </ListGroup.Item>
+
+          {currentuser.department === "owner" ? (
+            <ListGroup.Item style={{ border: "none" }}>
+              <Stars />
+              <p>No reviews yet</p>
+              <span style={{ opacity: ".8" }}>
+                {currentuser.username} hasn't rented anything out yet
+              </span>
+            </ListGroup.Item>
+          ) : (
+            <ListGroup.Item style={{ border: "none" }}>
+              <Stars />
+              <p>No reviews yet</p>
+              <span style={{ opacity: ".8" }}>
+                {currentuser.username} hasn't rented anything yet
+              </span>
+            </ListGroup.Item>
+          )}
         </ListGroup>
       </div>
     </ProfileContainer>
