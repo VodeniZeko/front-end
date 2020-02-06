@@ -19,7 +19,7 @@ const SingleItem = ({ match }) => {
   return (
     <SingleItemContainer>
       {products.map(el =>
-        el.id == id ? ( // so we need double equal not tripple aaaaggrgrg
+        el.id == Number(id) ? ( // so we need double equal not tripple or Number aaaaggrgrg
           <div id="wrapper">
             <div class="box">
               <div class="main-container">
