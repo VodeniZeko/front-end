@@ -10,17 +10,17 @@ const ItemList = () => {
   const products = useSelector(state => state.data);
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
 
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);
-  useEffect(() => {
-    var filtered = products.filter(x => {
-      return x.item_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
-    });
-    setItems(filtered);
-  }, [search, products]);
+  // useEffect(() => {
+  //   var filtered = products.filter(x => {
+  //     return x.item_name.toLowerCase().indexOf(search.toLowerCase()) !== -1;
+  //   });
+  //   setItems(filtered);
+  // }, [search, products]);
 
   const filtered = products.filter(x => {
     return (
