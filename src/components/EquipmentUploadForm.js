@@ -50,16 +50,25 @@ const EquipmentUploadForm = props => {
   const dispatch = useDispatch();
   const item = useSelector(state => state.item);
   const currentuser = useSelector(state => state.currentuser);
+  const items = useSelector(state => state.data);
+
+  const checkname = items.map(item => item.item_name);
+  console.log(checkname, "checkname");
+
   // const price = useSelector(state => state.item.rentalPrice);
   // const [radiobutton, setRadiobutton] = useState(false);
 
   const handlesubmit = e => {
     e.preventDefault();
-    dispatch(Send(`/users/${currentuser.id}/items`, item));
-    dispatch({ type: RESET_FORM });
-    setTimeout(() => {
-      push("/profile");
-    }, 200);
+    if (checkname.includes(item.item_name)) {
+      alert("Product Name already exist");
+    } else {
+      dispatch(Send(`/users/${currentuser.id}/items`, item));
+      dispatch({ type: RESET_FORM });
+      setTimeout(() => {
+        push("/profile");
+      }, 200);
+    }
   };
 
   const handlechange = e => {

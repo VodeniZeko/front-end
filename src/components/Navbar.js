@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import { NavbarContainer } from "../styles/styles.js";
 import { useSelector, useDispatch } from "react-redux";
+import { RESET_FORM } from "../reducers";
 
 const Navbar = props => {
   const loggedin = useSelector(state => state.loggedin);
@@ -43,7 +44,9 @@ const Navbar = props => {
                   to={{
                     pathname: `/equipmentupload/${currentuser.id}`
                   }}>
-                  <span>Equipment Upload</span>
+                  <span onClick={() => dispatch({ type: RESET_FORM })}>
+                    Equipment Upload
+                  </span>
                 </NavLink>
               ) : null}
               <NavLink to='/itemlist'>
