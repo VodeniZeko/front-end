@@ -860,6 +860,7 @@ export const ItemContainer = styled.div`
     float: left;
     margin-top: -25px;
     position: relative;
+    height: 190px;
   }
 
   .card-media-tag {
