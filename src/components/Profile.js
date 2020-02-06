@@ -13,7 +13,7 @@ const Profile = props => {
   const a = "	\u25BC";
   var check = "	\u2713";
   var noCheck = "	\u274C";
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState([]); //only for rich and marty dummy data
   const items = useSelector(state => state.data);
   const currentuser = useSelector(state => state.currentuser);
   const dispatch = useDispatch();
