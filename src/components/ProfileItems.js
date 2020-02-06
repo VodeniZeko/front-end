@@ -30,6 +30,16 @@ const ProfileItems = props => {
 
   return (
     <div className={classes.root}>
+      <h1
+        style={{
+          textAlign: "center",
+          textDecoration: "underline",
+          color: "cornflowerblue",
+          fontWeight: "800"
+        }}>
+        My Items
+      </h1>
+      <br />
       <Modal isOpen={modal} toggle={toggle} backdrop={true}>
         <ModalHeader toggle={toggle}>
           <Alert color="danger" style={{ textAlign: "center" }}>
