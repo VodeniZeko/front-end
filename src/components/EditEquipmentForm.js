@@ -16,35 +16,36 @@ import {
 } from "@bootstrap-styled/v4";
 import { useDispatch, useSelector } from "react-redux";
 import { FORM_CHANGE, RESET_FORM } from "../reducers";
-import { Send } from "../actions/Apicalls";
+import { Send, Edit } from "../actions/Apicalls";
 import Loader from "react-loader-spinner";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, useRouteMatch } from "react-router-dom";
 // import ButtonGroup from "@bootstrap-styled/v4/lib/ButtonGroup";
 
-const UploadInput = props => (
-  <input
-    type='file'
-    accept='image/*'
-    name='img-loader-input'
-    multiple
-    {...props}
-  />
-);
+// const UploadInput = props => (
+//   <input
+//     type='file'
+//     accept='image/*'
+//     name='img-loader-input'
+//     multiple
+//     {...props}
+//   />
+// );
 
 const EditEquipmentForm = props => {
-  const {
-    files,
-    pending,
-    next,
-    uploading,
-    uploaded,
-    status,
-    onSubmit,
-    onChange,
-    deleteimg
-  } = useUpload();
+  // const {
+  //   files,
+  //   pending,
+  //   next,
+  //   uploading,
+  //   uploaded,
+  //   status,
+  //   onSubmit,
+  //   onChange,
+  //   deleteimg
+  // } = useUpload();
 
   const { push } = useHistory();
+  const { params } = useRouteMatch();
 
   const [modal, setModal] = useState(true);
   const dispatch = useDispatch();
@@ -55,7 +56,8 @@ const EditEquipmentForm = props => {
 
   const handlesubmit = e => {
     e.preventDefault();
-    dispatch(Send(`/users/${currentuser.id}/items`, item));
+    dispatch(Edit(params.id, item));
+    dispatch({ type: RESET_FORM });
     setTimeout(() => {
       push("/profile");
     }, 200);
@@ -72,13 +74,14 @@ const EditEquipmentForm = props => {
   //     value: e.target.value
   //   });
   // };
-
+  console.log(props, "p");
   return (
     <div className='container'>
       {/* ------- FILES UPLOADED MSG ------ */}
-      <h1>Product Upload</h1>
+      <h1>Edit Product Upload</h1>
+      {console.log(params.id, "props")}
 
-      <form className='form' onSubmit={onSubmit}>
+      {/* <form className='form' onSubmit={onSubmit}>
         {status === "FILES_UPLOADED" && (
           <div className='success-container'>
             <Modal isOpen={modal}>
@@ -129,10 +132,21 @@ const EditEquipmentForm = props => {
             timeout={3000} //3 secs
           />
         ) : null}
-      </form>
+      </form> */}
       <div className='UploadForm'>
         <Form onSubmit={handlesubmit}>
           <FormGroup>
+            <Label>
+              <p> Image URL </p>
+              <Input
+                required
+                type='text'
+                name='imgs'
+                value={item.imgs}
+                placeholder='Image Location'
+                onChange={handlechange}
+              />
+            </Label>
             <Label>
               <p> Name of Product </p>
               <Input

@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import SingleItem from "./components/SingleItem";
 import ProfileItemGrid from "./components/ProfileItemGrid";
+import EditEquipmentForm from "./components/EditEquipmentForm";
 
 export default function App(props) {
   const dispatch = useDispatch();
@@ -32,6 +33,10 @@ export default function App(props) {
         <PrivateRoute
           path={`/equipmentupload/${currentuser.id}`}
           component={EquipmentUploadForm}
+        />
+        <PrivateRoute
+          path='/equipmentupdate/:id'
+          component={EditEquipmentForm}
         />
 
         <Route exact path='/'>

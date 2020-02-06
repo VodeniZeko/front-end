@@ -9,18 +9,14 @@ const uuidv4 = require("uuid/v4");
 const setid = window.localStorage.getItem("CURRENTUSER");
 
 const initialState = {
-
   currentuser: JSON.parse(setid) ?? { id: 3 },
-
-//   currentuser: JSON.parse(setid),
-
   loggedin: false,
   item: {
-    // id: uuidv4(),
+    // id: "",
     item_name: "",
     description: "",
-    availability: true,
-    daily_rate: Number,
+    availability: "",
+    daily_rate: "",
     condition: "",
     location: "",
     imgs: ""
@@ -46,8 +42,8 @@ export default (state = initialState, action) => {
     case DATA_FAILURE:
       return {
         ...state,
-        isloading: false,
-        data: action.payload
+        data: action.payload,
+        isloading: false
       };
     case FORM_CHANGE:
       return {
@@ -73,13 +69,13 @@ export default (state = initialState, action) => {
       return {
         ...state,
         item: {
-          id: uuidv4(),
           item_name: "",
           description: "",
-          availability: true,
-          daily_rate: Number,
+          availability: "",
+          daily_rate: "",
           condition: "",
-          location: ""
+          location: "",
+          imgs: ""
         }
       };
     }
@@ -97,13 +93,14 @@ export default (state = initialState, action) => {
       return {
         ...state,
         item: {
-          id: action.id,
-          item_name: action.name,
+          ...state.item,
+          item_name: action.item_name,
           description: action.description,
           availability: action.availability,
-          daily_rate: action.rate,
+          daily_rate: action.daily_rate,
           condition: action.condition,
-          location: action.location
+          location: action.location,
+          imgs: action.img
         }
       };
 

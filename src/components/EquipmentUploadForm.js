@@ -56,6 +56,7 @@ const EquipmentUploadForm = props => {
   const handlesubmit = e => {
     e.preventDefault();
     dispatch(Send(`/users/${currentuser.id}/items`, item));
+    dispatch({ type: RESET_FORM });
     setTimeout(() => {
       push("/profile");
     }, 200);

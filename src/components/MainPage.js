@@ -14,7 +14,6 @@ const MainPage = () => {
     <MainPageContainer>
       <div className='headerContainer'>
         <h1>
-          {" "}
           Let your spare
           <Typing
             strings={[
@@ -109,20 +108,20 @@ const MainPage = () => {
 
       <Testimonials />
       <Cta>
-        <div class="hero">
-          <div class="wrapper">
+        <div class='hero'>
+          <div class='wrapper'>
             <h1>Start earning today </h1>
             <p>
               Join hundreds of thousands of hosts on Shareable and start earning
               tomorrow.
             </p>
             {!loggedin ? (
-              <NavLink to="/signup">
-                <button className="btn">Start Today!</button>
+              <NavLink to='/signup'>
+                <button className='btn'>Start Today!</button>
               </NavLink>
             ) : (
-              <NavLink to="/itemlist">
-                <button className="btn">See Listings!</button>
+              <NavLink to='/itemlist'>
+                <button className='btn'>See Listings!</button>
               </NavLink>
             )}
           </div>
