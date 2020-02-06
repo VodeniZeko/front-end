@@ -35,25 +35,25 @@ export default function App(props) {
           component={EquipmentUploadForm}
         />
         <PrivateRoute
-          path='/equipmentupdate/:id'
+          path="/equipmentupdate/:id"
           component={EditEquipmentForm}
         />
 
-        <Route exact path='/'>
+        <Route exact path="/">
           <MainPage />
         </Route>
-        <PrivateRoute path='/itemlist' component={ItemList} />
-        <PrivateRoute path='/PersonalItems' component={ProfileItemGrid} />
+        <PrivateRoute path="/itemlist" component={ItemList} />
+        <PrivateRoute path="/PersonalItems" component={ProfileItemGrid} />
 
-        <Route path='/login'>
+        <Route path="/login">
           <LoginModal />
         </Route>
-        <Route path='/signup'>
+        <Route path="/signup">
           <SignUpModal />
         </Route>
-        <PrivateRoute path='/profile' component={Profile} />
-        <Route path='/:id' component={SingleItem} />
-        <Route path=''>
+        <PrivateRoute path="/profile" component={Profile} />
+        <Route path="/:id" component={SingleItem} />
+        <Route path="">
           <Lost />
         </Route>
       </Switch>

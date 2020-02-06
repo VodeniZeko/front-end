@@ -13,57 +13,65 @@ const Profile = props => {
   const a = "	\u25BC";
   var check = "	\u2713";
   var noCheck = "	\u274C";
-  const [user, setUser] = useState([]); //only for rich and marty dummy data
+  // const [user, setUser] = useState([]); //only for rich and marty dummy data
   const items = useSelector(state => state.data);
   const currentuser = useSelector(state => state.currentuser);
   const loading = useSelector(state => state.isloading);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    axios
-      .get("https://rickandmortyapi.com/api/character/")
-      .then(res => {
-        setUser(res.data.results[0]);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => { //only for rich and marty dummy data
+  //   axios
+  //     .get("https://rickandmortyapi.com/api/character/")
+  //     .then(res => {
+  //       setUser(res.data.results[0]);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }, []);
+  console.log(currentuser);
   useEffect(() => {
     dispatch(Fetch());
   }, [dispatch]);
   return (
     <ProfileContainer>
       {console.log(currentuser, "currentuser")}
-      <div class='coverPhoto'>
-        <img style={{ top: "255px" }} id='cover' src={`${profile}`} alt='' />
+      <div class="coverPhoto">
+        <img style={{ top: "255px" }} id="cover" src={`${profile}`} alt="" />
       </div>
       <div>
-        <img style={{ top: "480px" }} id='icon' src={user.image} alt='' />
+        <img
+          style={{ top: "480px" }}
+          id="icon"
+          src="http://www.hailatara.md/images/no_avatar-xlarge.jpg"
+          alt="user image"
+        />
       </div>
       <div
-        className='listContainer'
-        style={{ display: "flex", margin: "0 auto" }}>
+        className="listContainer"
+        style={{ display: "flex", margin: "0 auto" }}
+      >
         <ListGroup
-          variant='flush'
+          variant="flush"
           style={{
             padding: "1em 5em 0em 0em",
             fontSize: "2.5rem",
             height: "50vh",
             border: "none"
-          }}>
+          }}
+        >
           <ListGroup.Item
-            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}
+          >
             Verified info {a}
           </ListGroup.Item>
           {console.log(props, "props")}
           <ListGroup.Item style={{ border: "none" }}>
-            Name: {user.name}{" "}
+            Name: {currentuser.username}{" "}
             <span style={{ paddingLeft: "20px" }}>{check}</span>
           </ListGroup.Item>
           <ListGroup.Item style={{ border: "none" }}>
-            Email: {user.gender}{" "}
-            <span style={{ paddingLeft: "20px" }}>{check}</span>
+            Email: <span style={{ paddingLeft: "20px" }}>{check}</span>
           </ListGroup.Item>
           <ListGroup.Item style={{ border: "none" }}>
             Phone number: <span style={{ paddingLeft: "20px" }}>{noCheck}</span>
@@ -73,15 +81,17 @@ const Profile = props => {
           </ListGroup.Item>
         </ListGroup>
         <ListGroup
-          variant='flush'
+          variant="flush"
           style={{
             padding: "1em 0em",
             fontSize: "2.5rem",
             height: "50vh",
             border: "none"
-          }}>
+          }}
+        >
           <ListGroup.Item
-            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}
+          >
             Your Items{a}
           </ListGroup.Item>
 
@@ -95,15 +105,16 @@ const Profile = props => {
                       style={{
                         border: "none",
                         fontFamily: "'Nixie One', cursive"
-                      }}>
+                      }}
+                    >
                       <div
                         style={{
                           width: "50px",
                           height: "50px"
-                        }}>
-                        <NavLink to='/PersonalItems'>
-                          {" "}
-                          <img src={item.imgs} alt='' />
+                        }}
+                      >
+                        <NavLink to={`/PersonalItems`}>
+                          <img src={item.imgs} alt="" />
                         </NavLink>
                       </div>
                     </ListGroup.Item>
@@ -115,19 +126,21 @@ const Profile = props => {
           </ListGroup.Item>
         </ListGroup>
         <ListGroup
-          variant='flush'
+          variant="flush"
           style={{
             padding: "1em 5em",
-            fontSize: "2.5rem",
+            fontSize: "1.5rem",
             height: "50vh",
             border: "none"
-          }}>
+          }}
+        >
           <ListGroup.Item
-            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}
+          >
             Reviews from Owners{a}
           </ListGroup.Item>
           <ListGroup.Item style={{ border: "none" }}>
-            <img src='https://thumbs.dreamstime.com/t/creative-vector-illustration-default-avatar-profile-placeholder-isolated-background-art-design-grey-photo-blank-template-mo-118823351.jpg' />
+            <img src="https://thumbs.dreamstime.com/t/creative-vector-illustration-default-avatar-profile-placeholder-isolated-background-art-design-grey-photo-blank-template-mo-118823351.jpg" />
           </ListGroup.Item>
           <ListGroup.Item style={{ border: "none" }}>
             <Stars />
