@@ -36,33 +36,30 @@ const Profile = props => {
   return (
     <ProfileContainer>
       {console.log(currentuser, "currentuser")}
-      <div class="coverPhoto">
-        <img style={{ top: "255px" }} id="cover" src={`${profile}`} alt="" />
+      <div class='coverPhoto'>
+        <img style={{ top: "255px" }} id='cover' src={`${profile}`} alt='' />
       </div>
       <div>
         <img
           style={{ top: "480px" }}
-          id="icon"
-          src="http://www.hailatara.md/images/no_avatar-xlarge.jpg"
-          alt="user image"
+          id='icon'
+          src='http://www.hailatara.md/images/no_avatar-xlarge.jpg'
+          alt='user image'
         />
       </div>
       <div
-        className="listContainer"
-        style={{ display: "flex", margin: "0 auto" }}
-      >
+        className='listContainer'
+        style={{ display: "flex", margin: "0 auto" }}>
         <ListGroup
-          variant="flush"
+          variant='flush'
           style={{
             padding: "1em 5em 0em 0em",
             fontSize: "2.5rem",
             height: "50vh",
             border: "none"
-          }}
-        >
+          }}>
           <ListGroup.Item
-            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}
-          >
+            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
             Verified info {a}
           </ListGroup.Item>
           {console.log(props, "props")}
@@ -81,19 +78,19 @@ const Profile = props => {
           </ListGroup.Item>
         </ListGroup>
         <ListGroup
-          variant="flush"
+          variant='flush'
           style={{
             padding: "1em 0em",
             fontSize: "2.5rem",
             height: "50vh",
             border: "none"
-          }}
-        >
-          <ListGroup.Item
-            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}
-          >
-            Your Items{a}
-          </ListGroup.Item>
+          }}>
+          {currentuser.department === "owner" ? (
+            <ListGroup.Item
+              style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
+              Your Items{a}
+            </ListGroup.Item>
+          ) : null}
 
           <ListGroup.Item style={{ border: "none" }}>
             {items && !loading && (
@@ -105,16 +102,14 @@ const Profile = props => {
                       style={{
                         border: "none",
                         fontFamily: "'Nixie One', cursive"
-                      }}
-                    >
+                      }}>
                       <div
                         style={{
                           width: "50px",
                           height: "50px"
-                        }}
-                      >
+                        }}>
                         <NavLink to={`/PersonalItems`}>
-                          <img src={item.imgs} alt="" />
+                          <img src={item.imgs} alt='' />
                         </NavLink>
                       </div>
                     </ListGroup.Item>
@@ -126,21 +121,19 @@ const Profile = props => {
           </ListGroup.Item>
         </ListGroup>
         <ListGroup
-          variant="flush"
+          variant='flush'
           style={{
             padding: "1em 5em",
             fontSize: "1.5rem",
             height: "50vh",
             border: "none"
-          }}
-        >
+          }}>
           <ListGroup.Item
-            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}
-          >
+            style={{ border: "none", fontFamily: "'Nixie One', cursive" }}>
             Reviews from Owners{a}
           </ListGroup.Item>
           <ListGroup.Item style={{ border: "none" }}>
-            <img src="https://thumbs.dreamstime.com/t/creative-vector-illustration-default-avatar-profile-placeholder-isolated-background-art-design-grey-photo-blank-template-mo-118823351.jpg" />
+            <img src='https://thumbs.dreamstime.com/t/creative-vector-illustration-default-avatar-profile-placeholder-isolated-background-art-design-grey-photo-blank-template-mo-118823351.jpg' />
           </ListGroup.Item>
           <ListGroup.Item style={{ border: "none" }}>
             <Stars />
