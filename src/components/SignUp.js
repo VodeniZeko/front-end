@@ -48,9 +48,7 @@ const SignUp = () => {
           } = props;
           return (
             <form onSubmit={handleSubmit}>
-              <label className="signupLabel" htmlFor="text">
-                username
-              </label>
+              <label className="signupLabel" htmlFor="text"></label>
               <Field
                 className="signupInput"
                 name="username"
@@ -83,9 +81,7 @@ const SignUp = () => {
             {errors.email && touched.email && (
               <div className='input-feedback'>{errors.email}</div>
             )} */}
-              <label className="signupLabel" htmlFor="email">
-                Password
-              </label>
+              <label className="signupLabel" htmlFor="email"></label>
               {console.log(values, "value")}
               <Field
                 className="signupInput"

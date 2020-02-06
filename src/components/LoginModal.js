@@ -3,6 +3,8 @@ import { NavLink, useHistory } from "react-router-dom";
 import { Modal, Button } from "react-bootstrap";
 import Login from "./Login";
 import MainPage from "./MainPage";
+import auth from "../assets/auth.svg";
+
 const LoginModal = () => {
   const [show, setShow] = useState(true);
   const { push } = useHistory();
@@ -18,7 +20,13 @@ const LoginModal = () => {
         <Modal.Header closeButton>
           <Modal.Title id="SignUp">Welcome back</Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{ background: "transparent" }}>
+        <Modal.Body
+          style={{
+            backgroundImage: `url(${auth})`,
+            backgroundSize: "107% 62%",
+            backgroundRepeat: "no-repeat"
+          }}
+        >
           <Login />
           <Modal.Footer>
             <span>Don't have an account?</span>
