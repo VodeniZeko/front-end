@@ -19,7 +19,7 @@ const SingleItem = ({ match }) => {
   return (
     <SingleItemContainer>
       {products.map(el =>
-        el.id === id ? (
+        el.id === Number(id) ? (
           <div id='wrapper'>
             <div class='box'>
               <div class='main-container'>
