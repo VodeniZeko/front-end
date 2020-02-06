@@ -818,6 +818,7 @@ export const SearchFormContainer = styled.label`
     font-family: "Nixie One", cursive;
     transition: width 0.5s linear;
     transition-timing-function: ease;
+    transition-delay: 2s;
   }
 
   .search_icon {
@@ -831,7 +832,6 @@ export const SearchFormContainer = styled.label`
   }
 
   .dv:hover .inpt {
-    padding: 0 10px;
     width: 18.75em;
     transition: width 0.5s linear;
     background: white;
