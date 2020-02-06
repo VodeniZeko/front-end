@@ -71,7 +71,7 @@ export default (state = initialState, action) => {
         item: {
           item_name: "",
           description: "",
-          availability: "",
+          availability: 1,
           daily_rate: "",
           condition: "",
           location: "",

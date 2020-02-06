@@ -49,6 +49,9 @@ export const NavbarContainer = styled.div`
     display: flex;
     flex-direction: row-reverse;
     background: black;
+    @media screen and (min-width: 800px) {
+      margin-right: 10px;
+    }
   }
   nav {
     right: 0;
