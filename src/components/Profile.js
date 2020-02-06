@@ -85,9 +85,19 @@ const Profile = props => {
           </ListGroup.Item>
 
           <ListGroup.Item style={{ border: "none" }}>
-            <NavLink to="/PersonalItems">
-              <h2 style={{ color: "whitesmoke" }}>My Items</h2>
-            </NavLink>
+            {items
+              .filter(stuff => stuff.user_id === currentuser.id)
+
+              .map(item => (
+                <ListGroup.Item
+                  style={{
+                    border: "none",
+                    fontFamily: "'Nixie One', cursive"
+                  }}
+                >
+                  <NavLink to="/PersonalItems">{item.item_name}</NavLink>
+                </ListGroup.Item>
+              ))}
 
             {console.log(items, "items")}
           </ListGroup.Item>
