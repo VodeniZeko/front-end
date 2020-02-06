@@ -15,7 +15,7 @@ const initialState = {
     // id: "",
     item_name: "",
     description: "",
-    availability: "",
+    availability: 1,
     daily_rate: "",
     condition: "",
     location: "",

@@ -73,7 +73,6 @@ const ProfileItems = props => {
                     pathname: `/equipmentupdate/${props.item.id}`,
                     state: { itemid: props.item.id }
                   }}>
-                  {/* <Link to={`/equipmentupdate/${props.item.id}`}> */}
                   <Button
                     onClick={() =>
                       dispatch({
@@ -104,7 +103,7 @@ const ProfileItems = props => {
               </Grid>
             </Grid>
             <Grid item>
-              <Typography variant='subtitle1'>
+              <Typography variant='h6'>
                 Daily Rate : ${props.item.daily_rate}
               </Typography>
             </Grid>

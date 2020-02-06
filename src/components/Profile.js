@@ -16,6 +16,7 @@ const Profile = props => {
   const [user, setUser] = useState([]); //only for rich and marty dummy data
   const items = useSelector(state => state.data);
   const currentuser = useSelector(state => state.currentuser);
+  const loading = useSelector(state => state.isloading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -85,26 +86,30 @@ const Profile = props => {
           </ListGroup.Item>
 
           <ListGroup.Item style={{ border: "none" }}>
-            {items
-              .filter(stuff => stuff.user_id === currentuser.id)
-              .map(item => (
-                <ListGroup.Item
-                  style={{
-                    border: "none",
-                    fontFamily: "'Nixie One', cursive"
-                  }}>
-                  <div
-                    style={{
-                      width: "50px",
-                      height: "50px"
-                    }}>
-                    <NavLink to='/PersonalItems'>
-                      {" "}
-                      <img src={item.imgs} alt='' />
-                    </NavLink>
-                  </div>
-                </ListGroup.Item>
-              ))}
+            {items && !loading && (
+              <>
+                {items
+                  .filter(stuff => stuff.user_id === currentuser.id)
+                  .map(item => (
+                    <ListGroup.Item
+                      style={{
+                        border: "none",
+                        fontFamily: "'Nixie One', cursive"
+                      }}>
+                      <div
+                        style={{
+                          width: "50px",
+                          height: "50px"
+                        }}>
+                        <NavLink to='/PersonalItems'>
+                          {" "}
+                          <img src={item.imgs} alt='' />
+                        </NavLink>
+                      </div>
+                    </ListGroup.Item>
+                  ))}
+              </>
+            )}
 
             {console.log(items, "items")}
           </ListGroup.Item>

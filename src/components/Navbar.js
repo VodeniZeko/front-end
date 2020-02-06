@@ -49,6 +49,9 @@ const Navbar = props => {
               <NavLink to='/itemlist'>
                 <span>Browse items!</span>
               </NavLink>
+              <NavLink to='/profile'>
+                <span>Profile</span>
+              </NavLink>
               <NavLink
                 onClick={() =>
                   localStorage.removeItem("token") &
@@ -57,9 +60,6 @@ const Navbar = props => {
                 }
                 to='/'>
                 <span>Log out</span>
-              </NavLink>
-              <NavLink to='/profile'>
-                <span>Profile</span>
               </NavLink>
             </>
           )}
