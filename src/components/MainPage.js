@@ -37,12 +37,19 @@ const MainPage = () => {
           <NavLink to='/signup'>
             <button className='btn'>Join Today !</button>
           </NavLink>
-        ) : (
+        ) : currentuser.department === "owner" ? (
           <NavLink
             to={{
               pathname: `/equipmentupload/${currentuser.id}`
             }}>
             <button className='btn'>Start Listing!</button>
+          </NavLink>
+        ) : (
+          <NavLink
+            to={{
+              pathname: "/itemlist"
+            }}>
+            <button className='btn'>Start Renting!</button>
           </NavLink>
         )}
       </div>

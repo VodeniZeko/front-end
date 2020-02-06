@@ -8,10 +8,6 @@ import { useStyles } from "../styles/ProfileItemsStyled";
 import SaveIcon from "@material-ui/icons/Save";
 import { IconButton } from "@material-ui/core";
 import {
-  Card,
-  CardBlock,
-  CardTitle,
-  CardText,
   Modal,
   ModalHeader,
   ModalBody,
@@ -57,10 +53,10 @@ const ProfileItems = props => {
       <Paper elevation={5} className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item>
-            <img className={classes.img} alt="complex" src={props.item.imgs} />
+            <img className={classes.img} alt='complex' src={props.item.imgs} />
           </Grid>
           <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
+            <Grid item xs container direction='column' spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant='h4'>
                   {props.item.item_name}

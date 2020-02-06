@@ -11,21 +11,21 @@ const Navbar = props => {
   const dispatch = useDispatch();
   return (
     <NavbarContainer>
-      <NavLink to="/">
+      <NavLink to='/'>
         {" "}
-        <div className="logo">
-          <img src={`${logo}`} alt="logo" />
+        <div className='logo'>
+          <img src={`${logo}`} alt='logo' />
           <p>Shareable</p>
         </div>
       </NavLink>
-      <div className="nav-bar">
+      <div className='nav-bar'>
         <nav>
           {!loggedin ? (
             <>
-              <NavLink to="/login">
+              <NavLink to='/login'>
                 <span>Log in</span>
               </NavLink>
-              <NavLink to="/signup">
+              <NavLink to='/signup'>
                 <span>Sign up</span>
               </NavLink>
             </>
@@ -34,18 +34,19 @@ const Navbar = props => {
               <NavLink
                 to={{
                   pathname: `/`
-                }}
-              >
+                }}>
                 <span>Home</span>
               </NavLink>
-              <NavLink
-                to={{
-                  pathname: `/equipmentupload/${currentuser.id}`
-                }}
-              >
-                <span>Equipment Upload</span>
-              </NavLink>
-              <NavLink to="/itemlist">
+
+              {currentuser.department === "owner" ? (
+                <NavLink
+                  to={{
+                    pathname: `/equipmentupload/${currentuser.id}`
+                  }}>
+                  <span>Equipment Upload</span>
+                </NavLink>
+              ) : null}
+              <NavLink to='/itemlist'>
                 <span>Browse items!</span>
               </NavLink>
               <NavLink
@@ -54,11 +55,10 @@ const Navbar = props => {
                   localStorage.removeItem("CURRENTUSER") &
                   dispatch({ type: "LOGGED_STATUS", payload: false })
                 }
-                to="/"
-              >
+                to='/'>
                 <span>Log out</span>
               </NavLink>
-              <NavLink to="/profile">
+              <NavLink to='/profile'>
                 <span>Profile</span>
               </NavLink>
             </>
