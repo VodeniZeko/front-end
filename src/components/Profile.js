@@ -70,7 +70,7 @@ const Profile = props => {
             <span style={{ paddingLeft: "20px" }}>{check}</span>
           </ListGroup.Item>
           <ListGroup.Item style={{ border: "none" }}>
-            Email: <span style={{ paddingLeft: "20px" }}>{check}</span>
+            ID uploaded: <span style={{ paddingLeft: "20px" }}>{noCheck}</span>
           </ListGroup.Item>
           <ListGroup.Item style={{ border: "none" }}>
             Phone number: <span style={{ paddingLeft: "20px" }}>{noCheck}</span>
