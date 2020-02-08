@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FORM_CHANGE, RESET_FORM } from "../reducers";
 import { Send } from "../actions/Apicalls";
 import { useHistory } from "react-router-dom";
+import Lost from "./Lost";
 // import ButtonGroup from "@bootstrap-styled/v4/lib/ButtonGroup";
 
 // const UploadInput = props => (
@@ -83,10 +84,15 @@ const EquipmentUploadForm = props => {
 
   return (
     <div className='container'>
-      {/* ------- FILES UPLOADED MSG ------ */}
-      <h1>Product Upload</h1>
+      {currentuser.department === "renter" ? (
+        <>
+          <Lost />
+        </>
+      ) : (
+        <>
+          <h1>Product Upload</h1>
 
-      {/* <form className='form' onSubmit={onSubmit}>
+          {/* <form className='form' onSubmit={onSubmit}>
         {status === "FILES_UPLOADED" && (
           <div className='success-container'>
             <Modal isOpen={modal}>
@@ -138,68 +144,68 @@ const EquipmentUploadForm = props => {
           />
         ) : null}
       </form> */}
-      <div className='UploadForm'>
-        <Form onSubmit={handlesubmit}>
-          <FormGroup>
-            <Label>
-              <p> Image URL </p>
-              <Input
-                required
-                type='text'
-                name='imgs'
-                value={item.imgs}
-                placeholder='Image Location'
-                onChange={handlechange}
-              />
-            </Label>
-            <Label>
-              <p> Name of Product </p>
-              <Input
-                required
-                type='text'
-                name='item_name'
-                value={item.item_name}
-                placeholder=' Product Name'
-                onChange={handlechange}
-              />
-            </Label>
-            <Label>
-              <p> Description of Product </p>
-              <Textarea
-                type='text'
-                name='description'
-                value={item.description}
-                placeholder=' The quality of a product description can make or break a sale  '
-                onChange={handlechange}
-              />
-            </Label>
-            <Label>
-              <p> Product Condition </p>
-              <Input
-                className='condition'
-                type='text'
-                name='condition'
-                value={item.condition}
-                placeholder='Like New/ Good / Fair etc..'
-                onChange={handlechange}
-              />
-            </Label>
-            <Label>
-              <p> Product Location </p>
-              <Input
-                type='text'
-                name='location'
-                value={item.location}
-                placeholder='City/State'
-                onChange={handlechange}
-              />
-            </Label>
-            <Label>
-              <p style={{ textAlign: "center" }}>
-                Product Rental Price: <br /> (Can Choose Price per Hour and/or
-                Per Day)
-              </p>
-              {/* <Input
+          <div className='UploadForm'>
+            <Form onSubmit={handlesubmit}>
+              <FormGroup>
+                <Label>
+                  <p> Image URL </p>
+                  <Input
+                    required
+                    type='text'
+                    name='imgs'
+                    value={item.imgs}
+                    placeholder='Image Location'
+                    onChange={handlechange}
+                  />
+                </Label>
+                <Label>
+                  <p> Name of Product </p>
+                  <Input
+                    required
+                    type='text'
+                    name='item_name'
+                    value={item.item_name}
+                    placeholder=' Product Name'
+                    onChange={handlechange}
+                  />
+                </Label>
+                <Label>
+                  <p> Description of Product </p>
+                  <Textarea
+                    type='text'
+                    name='description'
+                    value={item.description}
+                    placeholder=' The quality of a product description can make or break a sale  '
+                    onChange={handlechange}
+                  />
+                </Label>
+                <Label>
+                  <p> Product Condition </p>
+                  <Input
+                    className='condition'
+                    type='text'
+                    name='condition'
+                    value={item.condition}
+                    placeholder='Like New/ Good / Fair etc..'
+                    onChange={handlechange}
+                  />
+                </Label>
+                <Label>
+                  <p> Product Location </p>
+                  <Input
+                    type='text'
+                    name='location'
+                    value={item.location}
+                    placeholder='City/State'
+                    onChange={handlechange}
+                  />
+                </Label>
+                <Label>
+                  <p style={{ textAlign: "center" }}>
+                    Product Rental Price: <br /> (Can Choose Price per Hour
+                    and/or Per Day)
+                  </p>
+                  {/* <Input
                   type='number'
                   name='hourlyRate'
                   value={price.hourlyRate}
@@ -207,15 +213,15 @@ const EquipmentUploadForm = props => {
                   onChange={priceChange}
                 /> */}
 
-              <Input
-                type='number'
-                name='daily_rate'
-                value={item.daily_rate}
-                placeholder='Price per Day'
-                onChange={handlechange}
-              />
-            </Label>
-            {/* <ButtonGroup>
+                  <Input
+                    type='number'
+                    name='daily_rate'
+                    value={item.daily_rate}
+                    placeholder='Price per Day'
+                    onChange={handlechange}
+                  />
+                </Label>
+                {/* <ButtonGroup>
               <Button
                 style={{ marginRight: "1%" }}
                 color='info'
@@ -232,14 +238,16 @@ const EquipmentUploadForm = props => {
               </Button>
             </ButtonGroup> */}
 
-            <div>
-              <button className='btn22' type='submit'>
-                Submit
-              </button>
-            </div>
-          </FormGroup>
-        </Form>
-      </div>
+                <div>
+                  <button className='btn22' type='submit'>
+                    Submit
+                  </button>
+                </div>
+              </FormGroup>
+            </Form>
+          </div>
+        </>
+      )}
     </div>
   );
 };

@@ -38,7 +38,6 @@ export default function App(props) {
           path='/equipmentupdate/:id'
           component={EditEquipmentForm}
         />
-
         <Route exact path='/'>
           <MainPage />
         </Route>
