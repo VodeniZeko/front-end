@@ -53,8 +53,8 @@ export const Edit = (id, data) => dispatch => {
     .put(`/item/${id}`, data)
     .then(res => {
       console.log(res, "Deleted data");
-      dispatch({ type: DATA_SUCCESS, payload: res.data });
-      dispatch(Fetch());
+      dispatch({ type: DATA_SUCCESS });
+      // dispatch(Fetch());
     })
     .catch(err => {
       dispatch({ type: DATA_FAILURE, payload: err.response });
@@ -68,7 +68,7 @@ export const Delete = id => dispatch => {
     .then(res => {
       console.log(res, "Deleted data");
       dispatch({ type: DATA_SUCCESS });
-      dispatch(Fetch());
+      // dispatch(Fetch());
     })
     .catch(err => {
       dispatch({ type: DATA_FAILURE, payload: err.response });

@@ -10,10 +10,11 @@ const ProfileItemGrid = () => {
   const loading = useSelector(state => state.isloading);
 
   const dispatch = useDispatch();
+  const loadingcheck = !items && !loading;
 
   useEffect(() => {
     dispatch(Fetch());
-  }, [dispatch]);
+  }, [loadingcheck, dispatch]);
 
   return (
     <div>
