@@ -52,8 +52,6 @@ const EquipmentUploadForm = props => {
   const items = useSelector(state => state.data);
 
   const checkname = items.map(item => item.item_name);
-  console.log(checkname, "checkname");
-
   // const price = useSelector(state => state.item.rentalPrice);
   // const [radiobutton, setRadiobutton] = useState(false);
 
@@ -83,7 +81,7 @@ const EquipmentUploadForm = props => {
   // };
 
   return (
-    <div className='container'>
+    <div className="container">
       {currentuser.department === "renter" ? (
         <>
           <Lost />
@@ -107,12 +105,12 @@ const EquipmentUploadForm = props => {
           </div>
         )}
         <div>
-          {console.log(props, "props")}
+ 
           <UploadInput className='fileupload' onChange={onChange} />
 
           <button type='submit'>Submit</button>
         </div>
-        {console.log(files, pending, "files")}
+
         {(status === "LOADED") | (uploading === true) ? (
           <div className='thmbnaildiv'>
             {files.map(({ file, src, id }, index) => (
@@ -144,17 +142,17 @@ const EquipmentUploadForm = props => {
           />
         ) : null}
       </form> */}
-          <div className='UploadForm'>
+          <div className="UploadForm">
             <Form onSubmit={handlesubmit}>
               <FormGroup>
                 <Label>
                   <p> Image URL </p>
                   <Input
                     required
-                    type='text'
-                    name='imgs'
+                    type="text"
+                    name="imgs"
                     value={item.imgs}
-                    placeholder='Image Location'
+                    placeholder="Image Location"
                     onChange={handlechange}
                   />
                 </Label>
@@ -162,41 +160,41 @@ const EquipmentUploadForm = props => {
                   <p> Name of Product </p>
                   <Input
                     required
-                    type='text'
-                    name='item_name'
+                    type="text"
+                    name="item_name"
                     value={item.item_name}
-                    placeholder=' Product Name'
+                    placeholder=" Product Name"
                     onChange={handlechange}
                   />
                 </Label>
                 <Label>
                   <p> Description of Product </p>
                   <Textarea
-                    type='text'
-                    name='description'
+                    type="text"
+                    name="description"
                     value={item.description}
-                    placeholder=' The quality of a product description can make or break a sale  '
+                    placeholder=" The quality of a product description can make or break a sale  "
                     onChange={handlechange}
                   />
                 </Label>
                 <Label>
                   <p> Product Condition </p>
                   <Input
-                    className='condition'
-                    type='text'
-                    name='condition'
+                    className="condition"
+                    type="text"
+                    name="condition"
                     value={item.condition}
-                    placeholder='Like New/ Good / Fair etc..'
+                    placeholder="Like New/ Good / Fair etc.."
                     onChange={handlechange}
                   />
                 </Label>
                 <Label>
                   <p> Product Location </p>
                   <Input
-                    type='text'
-                    name='location'
+                    type="text"
+                    name="location"
                     value={item.location}
-                    placeholder='City/State'
+                    placeholder="City/State"
                     onChange={handlechange}
                   />
                 </Label>
@@ -214,10 +212,10 @@ const EquipmentUploadForm = props => {
                 /> */}
 
                   <Input
-                    type='number'
-                    name='daily_rate'
+                    type="number"
+                    name="daily_rate"
                     value={item.daily_rate}
-                    placeholder='Price per Day'
+                    placeholder="Price per Day"
                     onChange={handlechange}
                   />
                 </Label>
@@ -229,7 +227,7 @@ const EquipmentUploadForm = props => {
                 active={!radiobutton}>
                 Price Per Hr
               </Button>
-              {console.log(radiobutton, "rd")}
+          
               <Button
                 color='secondary'
                 onClick={() => setRadiobutton(true)}
@@ -239,7 +237,7 @@ const EquipmentUploadForm = props => {
             </ButtonGroup> */}
 
                 <div>
-                  <button className='btn22' type='submit'>
+                  <button className="btn22" type="submit">
                     Submit
                   </button>
                 </div>

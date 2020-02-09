@@ -17,7 +17,6 @@ const Login = props => {
       .then(res => {
         setStatus(res.data);
         resetForm();
-        console.log(res, `success`);
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("CURRENTUSER", JSON.stringify(res.data.user));
 
@@ -65,7 +64,7 @@ const Login = props => {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              {console.log(values, "values")}
+
               {errors.username && touched.username && (
                 <span
                   style={{ position: "absolute", top: "70px", left: "70px" }}

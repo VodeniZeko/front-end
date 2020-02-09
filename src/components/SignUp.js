@@ -13,7 +13,6 @@ const SignUp = () => {
       .then(res => {
         setStatus(res.data);
         resetForm();
-        console.log(res, `success`);
         push("/login");
       })
       .catch(
@@ -86,7 +85,6 @@ const SignUp = () => {
               <div className='input-feedback'>{errors.email}</div>
             )} */}
               <label className="signupLabel" htmlFor="email"></label>
-              {console.log(values, "value")}
               <Field
                 className="signupInput"
                 name="password"
